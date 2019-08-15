@@ -45,7 +45,6 @@ describe(`Trip Internal Link CTA Test from overview page / detail button`, funct
         cy.get('[ctest=utm_form]').find('#FirstName').should('not.have.value', '');
         cy.get('[ctest=utm_form]').find('#LastName').should('not.have.value', '');
         cy.get('[ctest=utm_form]').find('#Email').should('not.have.value', '');
-
         //OPT IN checkboxes
         cy.get('[ctest=utm_form]').find('#optInNHA').should('be.checked');
         cy.get('[ctest=utm_form]').find('#optInTripDrips').should('be.checked');
