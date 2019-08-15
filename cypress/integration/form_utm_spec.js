@@ -16,7 +16,6 @@ var cta_buttons = [{
     {
         button: 'Itinerary',
         id: '#trip-nav-ul-li-2'
-        // contains: 'Itinerary'
     }
 ]
 
@@ -73,7 +72,7 @@ var dev_sites = [{
 //         cy.visit(`alex.nathab.com/africa/the-great-namibia-wildlife-safari/?banner&utm_source=TEST&utm_medium=TEST&utm_content=TEST&utm_campaign=TEST`);
 //         cy.get(`${cta_buttons[1].id}`).click();
 //         cy.contains(`${cta_buttons[1].contains}`);
-//         cy.get('[test=pdf_lightbox]').find('#form-ask').should('be.visible');
+//         cy.get('[ctest=ask_cta_lightbox]').find('#form-ask').should('be.visible');
 //         cy.get('#form-ask').find('#first_name').type('TEST');
 //         cy.get('#form-ask').find('#last_name').type('TEST');
 //         cy.get('#form-ask').find('#informationRequestPhone').type('000-000-0000');
@@ -129,9 +128,9 @@ describe(`Secret marketo form UTM inputs get filled out based on queries`, funct
         cy.get('#form-itinerary').find('#email').type('test@solocreative.co');
         cy.get('#form-itinerary-submit').click();
         cy.wait(5000)
-        cy.get('[test=utm_form]').find('#utmcampaign').should('not.have.value', '');
-        cy.get('[test=utm_form]').find('#utmcontent').should('not.have.value', '');
-        cy.get('[test=utm_form]').find('#utmmedium').should('not.have.value', '');
-        cy.get('[test=utm_form]').find('#utmsource').should('not.have.value', '');
+        cy.get('[ctest=utm_form]').find('#utmcampaign').should('not.have.value', '');
+        cy.get('[ctest=utm_form]').find('#utmcontent').should('not.have.value', '');
+        cy.get('[ctest=utm_form]').find('#utmmedium').should('not.have.value', '');
+        cy.get('[ctest=utm_form]').find('#utmsource').should('not.have.value', '');
     })
 });
