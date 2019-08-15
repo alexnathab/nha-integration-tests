@@ -1,21 +1,21 @@
 //TESTS TO SEE IF EACH TRIP CTA DOES IT'S JOB ON EACH PORTION OF THE TRIP PAGE
 var cta_buttons = [{
         button: 'Book',
-        id: '#cypress_book_cta_test',
+        id: '[ctest=book_cta]',
     },
     {
         button: 'Details',
-        id: '#cypress_pdf_cta_test',
+        id: '[ctest=pdf_cta]',
         contains: 'Download Trip Details'
     },
     {
         button: 'Ask',
-        id: '#cypress_ask_cta_test',
+        id: '[ctest=ask_cta]',
         contains: 'Ask a Question'
     },
     {
         button: 'Share',
-        id: '#cypress_share_cta_test',
+        id: '[ctest=share_cta]',
         contains: '<img src="https://platform-cdn.sharethis.com/img/facebook.svg">'
     }
 ]
