@@ -29,7 +29,7 @@ var cta_buttons = {
 
 describe(`Trip Internal Link CTA Test from overview page / detail button`, function () {
     it(`Clicks details CTA, fills out the form, and submits it`, function () {
-        cy.visit(`${dev_sites[0].prefix}nathab.com/africa/the-great-namibia-wildlife-safari/?banner&utm_source=testutmsrc&utm_medium=testurmmed&utm_content=testutmcont&utm_campaign=testutmcamp`);
+        cy.visit(`${dev_sites[0].prefix}nathab.com/africa/the-great-namibia-wildlife-safari/?banner&utm_source=testutmsrc&utm_medium=testurmmed&utm_content=testutmcont&utm_campaign=testutmcamp&utm_term=TEST`);
         cy.get(`${cta_buttons.id}`).click();
         cy.contains(`${cta_buttons.contains}`);
         cy.get(`[ctest=ask_cta_lightbox]`).find('#form-ask').should('be.visible');
@@ -56,5 +56,6 @@ describe(`Trip Internal Link CTA Test from overview page / detail button`, funct
         cy.get('[ctest=utm_form]').find('#utmcontent').should('not.have.value', '');
         cy.get('[ctest=utm_form]').find('#utmmedium').should('not.have.value', '');
         cy.get('[ctest=utm_form]').find('#utmsource').should('not.have.value', '');
+        cy.get('[ctest=utm_form]').find('#utmterm').should('not.have.value', '');
     })
 })
