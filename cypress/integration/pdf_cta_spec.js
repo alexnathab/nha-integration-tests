@@ -28,7 +28,7 @@ var dev_sites = [{
 // describe(`Secret marketo form UTM inputs get filled out based on queries`, function () {
 //     it(`Must fill out secret marketo form or it will fail`, function () {
 //         //the following string is full of queries and thus is being used for testing
-//         cy.visit(`alex.nathab.com/africa/the-great-namibia-wildlife-safari/?banner&utm_source=TEST&utm_medium=TEST&utm_content=TEST&utm_campaign=TEST&utm_term=TEST`);
+//         cy.visit(`${dev_sites[0].prefix}nathab.com/africa/the-great-namibia-wildlife-safari/?banner&utm_source=TEST&utm_medium=TEST&utm_content=TEST&utm_campaign=TEST&utm_term=TEST`);
 //         cy.get(`${cta_buttons.id}`).click();
 //         cy.contains(`${cta_buttons.contains}`);
 //         cy.get('[test=pdf_lightbox]').find('#form-pdf').should('be.visible');
@@ -64,7 +64,7 @@ var dev_sites = [{
 // describe(`Secret marketo form UTM inputs get filled out based on queries`, function () {
 //     it(`Must fill out secret marketo form or it will fail`, function () {
 //         //the following string is full of queries and thus is being used for testing
-//         cy.visit(`alex.nathab.com/africa/the-great-namibia-wildlife-safari/?banner&utm_source=TEST&utm_medium=TEST&utm_content=TEST&utm_campaign=TEST&utm_term=TEST`);
+//         cy.visit(`${dev_sites[0].prefix}nathab.com/africa/the-great-namibia-wildlife-safari/?banner&utm_source=TEST&utm_medium=TEST&utm_content=TEST&utm_campaign=TEST&utm_term=TEST`);
 //         cy.get(`${cta_buttons.id}`).click();
 //         cy.contains(`${cta_buttons.contains}`);
 //         cy.get('[test=pdf_lightbox]').find('#form-pdf').should('be.visible');
@@ -98,7 +98,7 @@ var dev_sites = [{
 describe(`Secret marketo form UTM inputs get filled out based on queries`, function () {
     it(`Must fill out secret marketo form or it will fail`, function () {
         //the following string is full of queries and thus is being used for testing
-        cy.visit(`alex.nathab.com/africa/the-great-namibia-wildlife-safari/?banner&utm_source=TEST&utm_medium=TEST&utm_content=TEST&utm_campaign=TEST&utm_term=TEST`);
+        cy.visit(`${dev_sites[0].prefix}nathab.com/africa/the-great-namibia-wildlife-safari/?banner&utm_source=TEST&utm_medium=TEST&utm_content=TEST&utm_campaign=TEST&utm_term=TEST`);
         cy.get(`${cta_buttons.id}`).click();
         cy.contains(`${cta_buttons.contains}`);
         cy.get('[test=pdf_lightbox]').find('#form-pdf').should('be.visible');
@@ -140,7 +140,7 @@ describe(`Secret marketo form UTM inputs get filled out based on queries`, funct
 // describe(`Secret marketo form UTM inputs get filled out based on queries`, function () {
 //     it(`Must fill out secret marketo form or it will fail`, function () {
 //         //the following string is full of queries and thus is being used for testing
-//         cy.visit(`alex.nathab.com/africa/the-great-namibia-wildlife-safari/?banner&utm_source=TEST&utm_medium=TEST&utm_content=TEST&utm_campaign=TEST&utm_term=TEST`);
+//         cy.visit(`${dev_sites[0].prefix}nathab.com/africa/the-great-namibia-wildlife-safari/?banner&utm_source=TEST&utm_medium=TEST&utm_content=TEST&utm_campaign=TEST&utm_term=TEST`);
 //         cy.get(`${cta_buttons.id}`).click();
 //         cy.contains(`${cta_buttons.contains}`);
 //         cy.get('[test=pdf_lightbox]').find('#form-pdf').should('be.visible');
