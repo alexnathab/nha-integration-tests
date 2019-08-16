@@ -31,7 +31,7 @@ describe(`Secret marketo form UTM inputs get filled out based on queries`, funct
             force: true
         });
         cy.contains(`${cta_buttons.contains}`);
-        cy.get('[test=utm_enews]').find('#form-enews').should('be.visible');
+        cy.get('[ctest=utm_enews]').find('#form-enews').should('be.visible');
         cy.get('#form-enews').find('#first_name').type('TEST');
         cy.get('#form-enews').find('#last_name').type('TEST');
         cy.get('#form-enews').find('#email').type('test@solocreative.co');
