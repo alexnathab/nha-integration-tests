@@ -1,6 +1,6 @@
 var cta_buttons = {
     button: 'eNews',
-    id: '[test=enews_utm]',
+    id: '[ctest=enews_utm]',
     contains: 'eNEWS'
 }
 
