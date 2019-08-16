@@ -31,7 +31,7 @@ describe(`Secret marketo form UTM inputs get filled out based on queries`, funct
         cy.visit(`${dev_sites[2].prefix}nathab.com/africa/the-great-namibia-wildlife-safari/?banner&utm_source=TEST&utm_medium=TEST&utm_content=TEST&utm_campaign=TEST&utm_term=TEST`);
         cy.get(`${cta_buttons.id}`).click();
         cy.contains(`${cta_buttons.contains}`);
-        cy.get('[test=pdf_lightbox]').find('#form-pdf').should('be.visible');
+        cy.get('[ctest=pdf_lightbox]').find('#form-pdf').should('be.visible');
         cy.get('#form-pdf').find('#first_name').type('TEST');
         cy.get('#form-pdf').find('#last_name').type('TEST');
         cy.get('#form-pdf').find('#email').type('test@solocreative.co');
@@ -67,7 +67,7 @@ describe(`Secret marketo form UTM inputs get filled out based on queries`, funct
         cy.visit(`${dev_sites[2].prefix}nathab.com/africa/the-great-namibia-wildlife-safari/?banner&utm_source=TEST&utm_medium=TEST&utm_content=TEST&utm_campaign=TEST&utm_term=TEST`);
         cy.get(`${cta_buttons.id}`).click();
         cy.contains(`${cta_buttons.contains}`);
-        cy.get('[test=pdf_lightbox]').find('#form-pdf').should('be.visible');
+        cy.get('[ctest=pdf_lightbox]').find('#form-pdf').should('be.visible');
         cy.get('#form-pdf').find('#first_name').type('TEST');
         cy.get('#form-pdf').find('#last_name').type('TEST');
         cy.get('#form-pdf').find('#email').type('test@solocreative.co');
@@ -101,7 +101,7 @@ describe(`Secret marketo form UTM inputs get filled out based on queries`, funct
         cy.visit(`${dev_sites[2].prefix}nathab.com/africa/the-great-namibia-wildlife-safari/?banner&utm_source=TEST&utm_medium=TEST&utm_content=TEST&utm_campaign=TEST&utm_term=TEST`);
         cy.get(`${cta_buttons.id}`).click();
         cy.contains(`${cta_buttons.contains}`);
-        cy.get('[test=pdf_lightbox]').find('#form-pdf').should('be.visible');
+        cy.get('[ctest=pdf_lightbox]').find('#form-pdf').should('be.visible');
         cy.get('#form-pdf').find('#first_name').type('TEST');
         cy.get('#form-pdf').find('#last_name').type('TEST');
         cy.get('#form-pdf').find('#email').type('test@solocreative.co');
@@ -143,7 +143,7 @@ describe(`Secret marketo form UTM inputs get filled out based on queries`, funct
         cy.visit(`${dev_sites[2].prefix}nathab.com/africa/the-great-namibia-wildlife-safari/?banner&utm_source=TEST&utm_medium=TEST&utm_content=TEST&utm_campaign=TEST&utm_term=TEST`);
         cy.get(`${cta_buttons.id}`).click();
         cy.contains(`${cta_buttons.contains}`);
-        cy.get('[test=pdf_lightbox]').find('#form-pdf').should('be.visible');
+        cy.get('[ctest=pdf_lightbox]').find('#form-pdf').should('be.visible');
         cy.get('#form-pdf').find('#first_name').type('TEST');
         cy.get('#form-pdf').find('#last_name').type('TEST');
         cy.get('#form-pdf').find('#email').type('test@solocreative.co');
