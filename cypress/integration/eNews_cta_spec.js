@@ -35,7 +35,7 @@ describe(`Secret marketo form UTM inputs get filled out based on queries`, funct
         cy.get('#form-enews').find('#first_name').type('TEST');
         cy.get('#form-enews').find('#last_name').type('TEST');
         cy.get('#form-enews').find('#email').type('test@solocreative.co');
-        cy.get('#form-enews-submit').click();
+        cy.get('#form-enews').submit();
 
         //Customer/attribution information that should be filled in
         cy.get('[ctest=utm_form]').find('#FirstName').should('not.have.value', '');

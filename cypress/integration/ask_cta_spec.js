@@ -81,14 +81,14 @@ describe(`Trip Internal Link CTA Test from overview page / detail button`, funct
         cy.get(`${cta_buttons.id}`).click();
         cy.contains(`${cta_buttons.contains}`);
         cy.get(`[ctest=ask_cta_lightbox]`).find('#form-ask').should('be.visible');
-        cy.get('#form-ask').find('#first_name').type('Alex-Test');
-        cy.get('#form-ask').find('#last_name').type('Test');
-        cy.get('#form-ask').find('#informationRequestPhone').type('Test');
-        cy.get('#form-ask').find('#email').type('test@solocreative.co');
+        // cy.get('#form-ask').find('#first_name').type('Alex-Test');
+        // cy.get('#form-ask').find('#last_name').type('Test');
+        // cy.get('#form-ask').find('#informationRequestPhone').type('Test');
+        // cy.get('#form-ask').find('#email').type('test@solocreative.co');
         cy.get('#form-ask').find('#requestNewsletter').uncheck();
         cy.get('#form-ask').find('#informationRequestDestinationsTA').clear()
         cy.get('#form-ask').find('#informationRequestDestinationsTA').type('THIS IS A TEST');
-        cy.get('#form-ask-submit').click();
+        cy.get('#form-ask').submit();
         // function isCatalogRequested(formName, eventAction) {
         //     console.log('hello')
         //     // Need to check this based on the form used
