@@ -25,7 +25,7 @@ var dev_sites = [{
 describe(`Secret marketo form UTM inputs get filled out based on queries`, function () {
     it(`Must fill out secret marketo form or it will fail`, function () {
         //the following string is full of queries and thus is being used for testing
-        cy.visit(`${dev_sites[2].prefix}nathab.com/africa/the-great-namibia-wildlife-safari/?banner&utm_source=testutmsrc&utm_medium=testutmmed&utm_content=testutmcontent&utm_campaign=testutmcamp&utm_term=TEST`);
+        cy.visit(`${dev_sites[0].prefix}nathab.com/africa/the-great-namibia-wildlife-safari/?banner&utm_source=testutmsrc&utm_medium=testutmmed&utm_content=testutmcontent&utm_campaign=testutmcamp&utm_term=TEST`);
         cy.get(`[tripnav-section=text]`).click();
         cy.contains(`Trip Details, Dates & Pricing`);
         cy.get(`${cta_buttons.id}`).click();
@@ -52,6 +52,9 @@ describe(`Secret marketo form UTM inputs get filled out based on queries`, funct
         cy.get('[ctest=utm_form]').find('#utmmedium').should('not.have.value', '');
         cy.get('[ctest=utm_form]').find('#utmsource').should('not.have.value', '');
         cy.get('[ctest=utm_form]').find('#utmterm').should('not.have.value', '');
+
+        //Recent Conversion Action 
+        cy.get('[ctest=utm_form]').find('#recentConversionAction').should('not.have.value', '');
     })
 });
 
@@ -59,7 +62,7 @@ describe(`Secret marketo form UTM inputs get filled out based on queries`, funct
 describe(`Secret marketo form UTM inputs get filled out based on queries`, function () {
     it(`Must fill out secret marketo form or it will fail`, function () {
         //the following string is full of queries and thus is being used for testing
-        cy.visit(`${dev_sites[2].prefix}nathab.com/africa/the-great-namibia-wildlife-safari/?banner&utm_source=testutmsrc&utm_medium=testutmmed&utm_content=testutmcontent&utm_campaign=testutmcamp&utm_term=TEST`);
+        cy.visit(`${dev_sites[0].prefix}nathab.com/africa/the-great-namibia-wildlife-safari/?banner&utm_source=testutmsrc&utm_medium=testutmmed&utm_content=testutmcontent&utm_campaign=testutmcamp&utm_term=TEST`);
         cy.get(`[tripnav-section=text]`).click();
         cy.contains(`Trip Details, Dates & Pricing`);
         cy.get(`${cta_buttons.id}`).click();
@@ -93,5 +96,8 @@ describe(`Secret marketo form UTM inputs get filled out based on queries`, funct
         cy.get('[ctest=utm_form]').find('#utmmedium').should('not.have.value', '');
         cy.get('[ctest=utm_form]').find('#utmsource').should('not.have.value', '');
         cy.get('[ctest=utm_form]').find('#utmterm').should('not.have.value', '');
+
+        //Recent Conversion Action 
+        cy.get('[ctest=utm_form]').find('#recentConversionAction').should('not.have.value', '');
     })
 });

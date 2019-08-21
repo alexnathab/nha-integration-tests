@@ -26,7 +26,7 @@ var dev_sites = [{
 describe(`Secret marketo form UTM inputs get filled out based on queries`, function () {
     it(`Must fill out secret marketo form or it will fail`, function () {
         //the following string is full of queries and thus is being used for testing
-        cy.visit(`${dev_sites[2].prefix}nathab.com/africa/the-great-namibia-wildlife-safari/?banner&utm_source=TEST&utm_medium=TEST&utm_content=TEST&utm_campaign=TEST&utm_term=TEST`);
+        cy.visit(`${dev_sites[0].prefix}nathab.com/africa/the-great-namibia-wildlife-safari/?banner&utm_source=TEST&utm_medium=TEST&utm_content=TEST&utm_campaign=TEST&utm_term=TEST`);
         cy.get(`${cta_buttons.id}`).click({
             force: true
         });
@@ -57,5 +57,8 @@ describe(`Secret marketo form UTM inputs get filled out based on queries`, funct
         cy.get('[ctest=utm_form]').find('#utmmedium').should('not.have.value', '');
         cy.get('[ctest=utm_form]').find('#utmsource').should('not.have.value', '');
         cy.get('[ctest=utm_form]').find('#utmterm').should('not.have.value', '');
+
+        //Recent Conversion Action 
+        cy.get('[ctest=utm_form]').find('#recentConversionAction').should('not.have.value', '');
     })
 });
