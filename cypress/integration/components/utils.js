@@ -1,7 +1,10 @@
 export const changeViewport = () => {
-    it(`Makes sure everything is visible`, function () {
-        cy.viewport(macbook - 15);
-    });
+    context(`Makes sure everything is visible`,
+        function () {
+            beforeEach(function () {
+                cy.viewport(1440, 980);
+            });
+        });
 }
 
 export const getURL = (prefix, itinerary) => {
