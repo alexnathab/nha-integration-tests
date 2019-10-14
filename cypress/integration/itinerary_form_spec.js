@@ -11,7 +11,8 @@ import {
     utmSecondaryTrue,
     checkbox,
     shipInfo,
-    catTemp
+    catTemp,
+    changeViewport
 } from './components/utils'
 
 var cta_buttons = {
@@ -40,10 +41,11 @@ var dev_sites = [{
 //TEST 1 -- catalog box NOT checked
 
 describe(`Itinerary Pop Up Form Test - nothing checked`, function () {
+    changeViewport();
     beforeEach(function () {
         Cypress.Cookies.preserveOnce('__utma', '__utmb', '__utmc', '__utmt', '__utmz');
     })
-    getURL(`${dev_sites[0].prefix}`, '');
+    getURL(`${dev_sites[2].prefix}`, '');
     clickCTA(`[tripnav-section=text]`);
     it('Makes sure that the item being clicked is the right one', function () {
         cy.contains(`Trip Details, Dates & Pricing`);
@@ -65,7 +67,7 @@ describe(`Itinerary Pop Up Form Test - Catalog checked`, function () {
     beforeEach(function () {
         Cypress.Cookies.preserveOnce('__utma', '__utmb', '__utmc', '__utmt', '__utmz');
     })
-    getURL(`${dev_sites[0].prefix}`, '');
+    getURL(`${dev_sites[2].prefix}`, '');
     clickCTA(`[tripnav-section=text]`);
     it('Makes sure that the item being clicked is the right one', function () {
         cy.contains(`Trip Details, Dates & Pricing`);

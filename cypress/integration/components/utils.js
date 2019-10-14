@@ -1,3 +1,9 @@
+export const changeViewport = () => {
+    it(`Makes sure everything is visible`, function () {
+        cy.viewport(macbook - 15);
+    });
+}
+
 export const getURL = (prefix, itinerary) => {
     it(`Visits a trip specific url with UTM codes in the queries`, function () {
         //the following string is full of queries and thus is being used for testing
