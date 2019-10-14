@@ -14,26 +14,6 @@ import {
     uncheckBox
 } from './components/utils'
 
-//TESTS FOR EACH DEV SITE + MASTER/LIVE
-
-var dev_sites = [{
-        branch: "Alex",
-        prefix: "alex."
-    },
-    {
-        branch: "Chris",
-        prefix: "solo."
-    },
-    {
-        branch: "Dev",
-        prefix: "https://dev."
-    },
-    {
-        branch: "Master",
-        prefix: "https://www."
-    }
-]
-
 var cta_buttons = {
     button: 'Ask',
     id: '[ctest=ask_cta]',
@@ -45,7 +25,7 @@ var cta_buttons = {
 
 describe(`Ask Form Test - eNews checked`, function () {
     //Validity Check
-    getURL(`${dev_sites[0].prefix}`, '');
+    getURL('https://dev.', '');
     clickCTA(`${cta_buttons.id}`);
     checkVisibility('[ctest=ask_cta_lightbox]', '#form-ask');
     submitForm('#form-ask-submit');
@@ -62,7 +42,7 @@ describe(`Ask Form Test - eNews checked`, function () {
 
 describe(`Ask Form Test - nothing checked`, function () {
     //Validity Check
-    getURL(`${dev_sites[0].prefix}`, '');
+    getURL('https://dev.', '');
     clickCTA(`${cta_buttons.id}`);
     checkVisibility('[ctest=ask_cta_lightbox]', '#form-ask');
     submitForm('#form-ask-submit');

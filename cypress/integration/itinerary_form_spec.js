@@ -13,29 +13,6 @@ import {
     catTemp,
 } from './components/utils'
 
-var cta_buttons = {
-    button: 'Itinerary',
-    id: 'a'
-}
-
-var dev_sites = [{
-        branch: "Alex",
-        prefix: "alex."
-    },
-    {
-        branch: "Chris",
-        prefix: "solo."
-    },
-    {
-        branch: "Dev",
-        prefix: "https://dev."
-    },
-    {
-        branch: "Master",
-        prefix: "https://www."
-    }
-]
-
 //TEST 1 -- catalog box NOT checked
 
 describe(`Itinerary Pop Up Form Test - nothing checked`, function () {
@@ -43,9 +20,9 @@ describe(`Itinerary Pop Up Form Test - nothing checked`, function () {
     beforeEach(function () {
         Cypress.Cookies.preserveOnce('__utma', '__utmb', '__utmc', '__utmt', '__utmz');
     })
-    getURL(`${dev_sites[2].prefix}`, '');
+    getURL('https://dev.', '');
     checkVisibility('[tripnav~="wrapper"]', '#trip-nav-ul-li-2');
-    it(`Clicks the appropriate button`, function () {
+    it(`finds the Itinerary subnav link and clicks it`, function () {
         cy.get('[tripnav~="wrapper"]').find('#trip-nav-ul-li-2').click();
     });
     checkVisibility('[ctest=utm_itinerary]', '#form-itinerary');
@@ -64,9 +41,9 @@ describe(`Itinerary Pop Up Form Test - Catalog checked`, function () {
     beforeEach(function () {
         Cypress.Cookies.preserveOnce('__utma', '__utmb', '__utmc', '__utmt', '__utmz');
     })
-    getURL(`${dev_sites[2].prefix}`, '');
+    getURL('https://dev.', '');
     checkVisibility('[tripnav~="wrapper"]', '#trip-nav-ul-li-2');
-    it(`Clicks the appropriate button`, function () {
+    it(`finds the Itinerary subnav link and clicks it`, function () {
         cy.get('[tripnav~="wrapper"]').find('#trip-nav-ul-li-2').click();
     });
     checkVisibility('[ctest=utm_itinerary]', '#form-itinerary');

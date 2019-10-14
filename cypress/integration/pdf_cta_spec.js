@@ -28,29 +28,9 @@ var cta_buttons = {
     contains: 'Download Trip Details'
 }
 
-//TESTS FOR EACH DEV SITE + MASTER/LIVE
-
-var dev_sites = [{
-        branch: "Alex",
-        prefix: "alex."
-    },
-    {
-        branch: "Chris",
-        prefix: "solo."
-    },
-    {
-        branch: "Dev",
-        prefix: "https://dev."
-    },
-    {
-        branch: "Master",
-        prefix: "https://www."
-    }
-]
-
 // TEST 1 -- no checks 
 describe(`PDF Form Test - Nothing Checked`, function () {
-    getURL(`${dev_sites[0].prefix}`, '');
+    getURL('https://dev.', '');
     clickCTA(`${cta_buttons.id}`);
     checkVisibility('[ctest=pdf_lightbox]', '#form-pdf');
     submitForm('#form-pdf-submit');
@@ -67,7 +47,7 @@ describe(`PDF Form Test - Nothing Checked`, function () {
 
 //TEST 2 -- enews checked only 
 describe(`PDF Form Test - eNews Checked`, function () {
-    getURL(`${dev_sites[0].prefix}`, '');
+    getURL('https://dev.', '');
     clickCTA(`${cta_buttons.id}`);
     checkVisibility('[ctest=pdf_lightbox]', '#form-pdf');
     submitForm('#form-pdf-submit');
@@ -83,7 +63,7 @@ describe(`PDF Form Test - eNews Checked`, function () {
 
 // TEST 3 -- cat checked only 
 describe(`PDF Form Test - Catalog Checked`, function () {
-    getURL(`${dev_sites[0].prefix}`, '');
+    getURL('https://dev.', '');
     clickCTA(`${cta_buttons.id}`);
     checkVisibility('[ctest=pdf_lightbox]', '#form-pdf');
     submitForm('#form-pdf-submit');
@@ -103,7 +83,7 @@ describe(`PDF Form Test - Catalog Checked`, function () {
 
 // TEST 4 -- both enews and catalog checked
 describe(`PDF Form Test - Catalog & eNews Checked`, function () {
-    getURL(`${dev_sites[0].prefix}`, '');
+    getURL('https://dev.', '');
     clickCTA(`${cta_buttons.id}`);
     checkVisibility('[ctest=pdf_lightbox]', '#form-pdf');
     submitForm('#form-pdf-submit');

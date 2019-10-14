@@ -17,28 +17,9 @@ var cta_buttons = {
     contains: 'eNEWS'
 }
 
-var dev_sites = [{
-        branch: "Alex",
-        prefix: "alex."
-    },
-    {
-        branch: "Chris",
-        prefix: "solo."
-    },
-    {
-        branch: "Dev",
-        prefix: "https://dev."
-    },
-    {
-        branch: "Master",
-        prefix: "https://www."
-    }
-]
-
-
 describe(`eNews Form Test`, function () {
     //Validity Check
-    getURL(`${dev_sites[0].prefix}`, '');
+    getURL('https://dev.', '');
     clickCTA(`${cta_buttons.id}`);
     checkVisibility('[ctest=utm_enews]', '#form-enews');
     submitForm('#form-enews-submit');
