@@ -56,8 +56,11 @@ describe(`Itinerary Pop Up Form Test - nothing checked`, function () {
     // //     cy.contains(`Trip Details, Dates & Pricing`);
     // // })
     checkVisibility('.trip-nav-ul', '#trip-nav-ul-li-2');
-    it(`Clicks the appropriate button`, function () {
-        cy.get('.trip-nav-ul').find('#trip-nav-ul-li-2').get('#trip-nav-ul-li-2.a').click();
+    // it(`Clicks the appropriate button`, function () {
+    //     cy.get('.trip-nav-ul').find('#trip-nav-ul-li-2').get('#trip-nav-ul-li-2.a').click();
+    // });
+    it(`Makes sure the form is visible`, function () {
+        cy.get('.trip-nav-ul').find('#trip-nav-ul-li-2').click();
     });
     checkVisibility('[ctest=utm_itinerary]', '#form-itinerary');
     submitForm('#form-itinerary-submit');
