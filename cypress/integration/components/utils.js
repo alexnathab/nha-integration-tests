@@ -15,7 +15,9 @@ export const getURL = (prefix, itinerary) => {
 }
 export const clickCTA = (text) => {
     it(`Clicks the appropriate button`, function () {
-        cy.get(text).click();
+        cy.get(text).click({
+            force: true
+        });
     });
 }
 
