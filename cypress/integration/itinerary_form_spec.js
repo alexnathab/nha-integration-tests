@@ -12,7 +12,6 @@ import {
     checkbox,
     shipInfo,
     catTemp,
-    changeViewport
 } from './components/utils'
 
 var cta_buttons = {
@@ -41,7 +40,13 @@ var dev_sites = [{
 //TEST 1 -- catalog box NOT checked
 
 describe(`Itinerary Pop Up Form Test - nothing checked`, function () {
-    changeViewport();
+    console.log('this is changing');
+    // it(`changes viewport height and width`,
+    //     function () {
+    //         beforeEach(function () {
+    //             cy.viewport(1440, 980);
+    //         });
+    //     });
     beforeEach(function () {
         Cypress.Cookies.preserveOnce('__utma', '__utmb', '__utmc', '__utmt', '__utmz');
     })

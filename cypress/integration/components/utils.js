@@ -1,5 +1,5 @@
 export const changeViewport = () => {
-    context(`Makes sure everything is visible`,
+    it(`changes viewport height and width`,
         function () {
             beforeEach(function () {
                 cy.viewport(1440, 980);
