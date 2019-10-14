@@ -1,6 +1,5 @@
 import {
     getURL,
-    clickCTA,
     checkVisibility,
     submitForm,
     checkValidity,
