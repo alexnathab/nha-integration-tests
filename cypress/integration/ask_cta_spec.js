@@ -42,7 +42,7 @@ describe(`Ask Form Test - eNews checked`, function () {
 
 describe(`Ask Form Test - nothing checked`, function () {
     //Validity Check
-    getURL('https://dev.', '');
+    getURL('alex.', '');
     clickCTA(`${cta_buttons.id}`);
     checkVisibility('[ctest=ask_cta_lightbox]', '#form-ask');
     submitForm('#form-ask-submit');
