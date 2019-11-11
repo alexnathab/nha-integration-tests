@@ -25,7 +25,7 @@ var cta_buttons = {
 
 describe(`Ask Form Test - eNews checked`, function () {
     //Validity Check
-    getURL('https://dev.', '');
+    getURL('alex.', '');
     clickCTA(`${cta_buttons.id}`);
     checkVisibility('[ctest=ask_cta_lightbox]', '#form-ask');
     submitForm('#form-ask-submit');
