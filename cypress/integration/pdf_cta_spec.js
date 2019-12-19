@@ -20,19 +20,15 @@ import {
     utmValueFalse,
     catTempFalse,
     recentTripUrlTrue,
-    recentTripUrlFalse
+    recentTripUrlFalse,
+    utmLeadSourceTrue,
+    utmSourceDetailFalse
 } from './components/utils'
 
-var cta_buttons = {
-    button: 'Details',
-    id: '[ctest=pdf_cta]',
-    contains: 'Download Trip Details'
-}
-
 // TEST 1 -- no checks 
-describe(`PDF Form Test - Nothing Checked`, function () {
+describe(`PDF Form Test - Nothing Checked | INCLUDES UTM CODES`, function () {
     getURL('https://dev.', '');
-    clickCTA(`${cta_buttons.id}`);
+    clickCTA(`[ctest=pdf_cta]`);
     checkVisibility('[ctest=pdf_lightbox]', '#form-pdf');
     submitForm('#form-pdf-submit');
     checkValidity('#form-pdf');
@@ -47,9 +43,9 @@ describe(`PDF Form Test - Nothing Checked`, function () {
 });
 
 //TEST 2 -- enews checked only 
-describe(`PDF Form Test - eNews Checked`, function () {
+describe(`PDF Form Test - eNews Checked | INCLUDES UTM CODES`, function () {
     getURL('https://dev.', '');
-    clickCTA(`${cta_buttons.id}`);
+    clickCTA(`[ctest=pdf_cta]`);
     checkVisibility('[ctest=pdf_lightbox]', '#form-pdf');
     submitForm('#form-pdf-submit');
     checkValidity('#form-pdf');
@@ -63,9 +59,9 @@ describe(`PDF Form Test - eNews Checked`, function () {
 });
 
 // TEST 3 -- cat checked only 
-describe(`PDF Form Test - Catalog Checked`, function () {
+describe(`PDF Form Test - Catalog Checked | INCLUDES UTM CODES`, function () {
     getURL('https://dev.', '');
-    clickCTA(`${cta_buttons.id}`);
+    clickCTA(`[ctest=pdf_cta]`);
     checkVisibility('[ctest=pdf_lightbox]', '#form-pdf');
     submitForm('#form-pdf-submit');
     checkValidity('#form-pdf');
@@ -74,19 +70,20 @@ describe(`PDF Form Test - Catalog Checked`, function () {
     checkbox('#form-pdf', '#requestCatalog');
     shipInfo('#form-pdf');
     submitForm('#form-pdf-submit');
-    utmPersonalInfoFalse();
-    utmSecondaryFalse();
+    utmPersonalInfoTrue();
+    utmSourceDetailFalse();
+    utmLeadSourceTrue();
     recentTripUrlFalse();
     catTempFalse();
     utmOptInFalse();
-    utmValueFalse();
+    utmValueTrue();
     addressDataTrue();
 });
 
 // TEST 4 -- both enews and catalog checked
-describe(`PDF Form Test - Catalog & eNews Checked`, function () {
+describe(`PDF Form Test - Catalog & eNews Checked | INCLUDES UTM CODES`, function () {
     getURL('https://dev.', '');
-    clickCTA(`${cta_buttons.id}`);
+    clickCTA(`[ctest=pdf_cta]`);
     checkVisibility('[ctest=pdf_lightbox]', '#form-pdf');
     submitForm('#form-pdf-submit');
     checkValidity('#form-pdf');

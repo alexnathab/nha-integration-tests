@@ -28,7 +28,7 @@ export const checkVisibility = (textOne, textTwo) => {
 }
 
 export const submitForm = (text) => {
-    it(`Submits empty form`, function () {
+    it(`Submits form`, function () {
         cy.get(text).click();
     });
 }
@@ -51,14 +51,14 @@ export const requiredInfo = (formID) => {
 };
 
 export const utmPersonalInfoTrue = () => {
-    it('Makes sure that personal information fields in UTM form are not blank', function () {
+    it('Makes sure that personal information fields in UTM form ARE filled in', function () {
         cy.get('[ctest=utm_form]').find('#FirstName').should('not.have.value', '');
         cy.get('[ctest=utm_form]').find('#LastName').should('not.have.value', '');
         cy.get('[ctest=utm_form]').find('#Email').should('not.have.value', '');
     })
 }
 export const utmPersonalInfoFalse = () => {
-    it('Makes sure that personal information fields in UTM form are not blank', function () {
+    it('Makes sure that personal information fields in UTM form ARE NOT filled in', function () {
         cy.get('[ctest=utm_form]').find('#FirstName').should('have.value', '');
         cy.get('[ctest=utm_form]').find('#LastName').should('have.value', '');
         cy.get('[ctest=utm_form]').find('#Email').should('have.value', '');
@@ -66,7 +66,7 @@ export const utmPersonalInfoFalse = () => {
 }
 
 export const utmOptInTrue = () => {
-    it('Makes sure that utm Opt Ins are checked', function () {
+    it('Makes sure that utm Opt Ins ARE checked', function () {
         cy.get('[ctest=utm_form]').find('#optInNHA').should('be.checked');
         cy.get('[ctest=utm_form]').find('#optInTripDrips').should('be.checked');
         cy.get('[ctest=utm_form]').find('#optInStories').should('be.checked');
@@ -76,7 +76,7 @@ export const utmOptInTrue = () => {
 }
 
 export const utmOptInFalse = () => {
-    it('Makes sure that utm Opt Ins are checked', function () {
+    it('Makes sure that utm Opt Ins ARE NOT checked', function () {
         cy.get('[ctest=utm_form]').find('#optInNHA').should('not.be.checked');
         cy.get('[ctest=utm_form]').find('#optInTripDrips').should('not.be.checked');
         cy.get('[ctest=utm_form]').find('#optInStories').should('not.be.checked');
@@ -86,7 +86,7 @@ export const utmOptInFalse = () => {
 }
 
 export const utmValueTrue = () => {
-    it('Makes sure that UTM values are being pulled from url queries', function () {
+    it('Makes sure that UTM values ARE being pulled from url queries', function () {
         cy.get('[ctest=utm_form]').find('#utmcampaign').should('not.have.value', '');
         cy.get('[ctest=utm_form]').find('#utmcontent').should('not.have.value', '');
         cy.get('[ctest=utm_form]').find('#utmmedium').should('not.have.value', '');
@@ -96,7 +96,7 @@ export const utmValueTrue = () => {
     });
 }
 export const utmValueFalse = () => {
-    it('Makes sure that UTM values are being pulled from url queries', function () {
+    it('Makes sure that UTM values ARE NOT being pulled from url queries', function () {
         cy.get('[ctest=utm_form]').find('#utmcampaign').should('have.value', '');
         cy.get('[ctest=utm_form]').find('#utmcontent').should('have.value', '');
         cy.get('[ctest=utm_form]').find('#utmmedium').should('have.value', '');
@@ -107,7 +107,7 @@ export const utmValueFalse = () => {
 }
 
 export const addressDataTrue = () => {
-    it('Makes sure that the address info is filled out', function () {
+    it('Makes sure that the address info IS filled out', function () {
         cy.get('[ctest=utm_form]').find('#Address').should('not.have.value', '');
         cy.get('[ctest=utm_form]').find('#City').should('not.have.value', '');
         cy.get('[ctest=utm_form]').find('#State').should('not.have.value', '');
@@ -117,37 +117,62 @@ export const addressDataTrue = () => {
 }
 
 export const utmSecondaryTrue = () => {
-    it('confirms secondary utm info is populated', function () {
+    it('confirms secondary utm info IS populated', function () {
         cy.get('[ctest=utm_form]').find('#LeadSource').should('not.have.value', '');
         cy.get('[ctest=utm_form]').find('#sourceDetail').should('not.have.value', '');
     })
 }
+
+export const utmLeadSourceTrue = () => {
+    it('confrims that the Lead Source field is NOT empty', function () {
+        cy.get('[ctest=utm_form]').find('#LeadSource').should('not.have.value', '');
+    })
+}
+
+export const utmLeadSourceFalse = () => {
+    it('confrims that the Lead Source field IS empty', function () {
+        cy.get('[ctest=utm_form]').find('#LeadSource').should('have.value', '');
+    })
+}
+
+export const utmSourceDetailFalse = () => {
+    it('confrims that the Source Detail field IS empty', function () {
+        cy.get('[ctest=utm_form]').find('#sourceDetail').should('have.value', '');
+    })
+}
+export const utmSourceDetailTrue = () => {
+    it('confrims that the Source Detail field is NOT empty', function () {
+        cy.get('[ctest=utm_form]').find('#sourceDetail').should('not.have.value', '');
+    })
+}
+
+
 export const utmSecondaryFalse = () => {
-    it('confirms secondary utm info is populated', function () {
+    it('confirms secondary utm info IS NOT populated', function () {
         cy.get('[ctest=utm_form]').find('#LeadSource').should('have.value', '');
         cy.get('[ctest=utm_form]').find('#sourceDetail').should('have.value', '');
     })
 }
 
 export const recentTripUrlTrue = () => {
-    it('makes sure that Recent Trip PDF Url field is filled in', function () {
+    it('makes sure that Recent Trip PDF Url field IS FILLED IN', function () {
         cy.get('[ctest=utm_form]').find('#recentTripPDFURL').should('not.have.value', '');
     });
 }
 
 export const recentTripUrlFalse = () => {
-    it('makes sure that Recent Trip PDF Url field is empty', function () {
+    it('makes sure that Recent Trip PDF Url field IS EMPTY', function () {
         cy.get('[ctest=utm_form]').find('#recentTripPDFURL').should('have.value', '');
     });
 }
 
 export const catTemp = () => {
-    it('makes sure temp is filled in', function () {
+    it('makes sure temp IS filled in', function () {
         cy.get('[ctest=utm_form]').find('#temp').should('not.have.value', '');
     })
 }
 export const catTempFalse = () => {
-    it('makes sure temp is filled in', function () {
+    it('makes sure temp IS NOT filled in', function () {
         cy.get('[ctest=utm_form]').find('#temp').should('have.value', '');
     })
 }
