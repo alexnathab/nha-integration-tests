@@ -106,6 +106,16 @@ export const utmValueFalse = () => {
     });
 }
 
+export const addressDataTrue = () => {
+    it('Makes sure that the address info is filled out', function () {
+        cy.get('[ctest=utm_form]').find('#Address').should('not.have.value', '');
+        cy.get('[ctest=utm_form]').find('#City').should('not.have.value', '');
+        cy.get('[ctest=utm_form]').find('#State').should('not.have.value', '');
+        cy.get('[ctest=utm_form]').find('#PostalCode').should('not.have.value', '');
+        cy.get('[ctest=utm_form]').find('#Country').should('not.have.value', '');
+    })
+}
+
 export const utmSecondaryTrue = () => {
     it('confirms secondary utm info is populated', function () {
         cy.get('[ctest=utm_form]').find('#LeadSource').should('not.have.value', '');

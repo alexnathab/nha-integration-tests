@@ -14,6 +14,7 @@ import {
     catTemp,
     uncheckBox,
     utmPersonalInfoFalse,
+    addressDataTrue,
     utmSecondaryFalse,
     utmOptInFalse,
     utmValueFalse,
@@ -79,6 +80,7 @@ describe(`PDF Form Test - Catalog Checked`, function () {
     catTempFalse();
     utmOptInFalse();
     utmValueFalse();
+    addressDataTrue();
 });
 
 // TEST 4 -- both enews and catalog checked
@@ -98,4 +100,5 @@ describe(`PDF Form Test - Catalog & eNews Checked`, function () {
     catTemp();
     utmOptInTrue();
     utmValueTrue();
+    addressDataTrue();
 });

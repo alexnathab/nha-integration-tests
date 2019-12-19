@@ -11,6 +11,7 @@ import {
     checkbox,
     shipInfo,
     catTemp,
+    addressDataTrue
 } from './components/utils'
 
 //TEST 1 -- catalog box NOT checked
@@ -58,5 +59,6 @@ describe(`Itinerary Pop Up Form Test - Catalog checked`, function () {
     catTemp();
     utmOptInTrue();
     utmValueTrue();
+    addressDataTrue();
 
 });
