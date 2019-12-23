@@ -45,10 +45,6 @@ describe(`Itinerary Pop Up Form Test - nothing checked | INCLUDES UTM CODES`, fu
 });
 
 describe(`Itinerary Pop Up Form Test - nothing checked | NO UTM CODES`, function () {
-    console.log('this is changing');
-    beforeEach(function () {
-        Cypress.Cookies.preserveOnce('__utma', '__utmb', '__utmc', '__utmt', '__utmz');
-    })
     getNoUTMURL('https://dev.');
     checkVisibility('[tripnav~="wrapper"]', '#trip-nav-ul-li-2');
     it(`finds the Itinerary subnav link and clicks it`, function () {
