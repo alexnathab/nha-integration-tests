@@ -81,7 +81,9 @@ describe(`Ask Form Test - nothing checked | INCLUDES UTM CODES`, function () {
     uncheckBox('#form-ask', '#requestNewsletter');
     submitForm('#form-ask-submit');
     utmPersonalInfoFalse();
-    utmSecondaryFalse();
+    // utmSecondaryFalse();
+    leadSourceFalse();
+    sourceDetail();
     catTempFalse();
     utmOptInFalse();
     utmValueFalse();
