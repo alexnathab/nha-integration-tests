@@ -13,6 +13,13 @@ export const getURL = (prefix, itinerary) => {
         cy.visit(`${prefix}nathab.com/africa/the-great-namibia-wildlife-safari/${itinerary}?banner&utm_source=TEST&utm_medium=TEST&utm_content=TEST&utm_campaign=TEST&utm_term=TEST`);
     });
 }
+
+export const getNoUTMURL = (prefix, itinerary) => {
+    it(`Visits a trip specific url with UTM codes in the queries`, function () {
+        //the following string is full of queries and thus is being used for testing
+        cy.visit(`${prefix}nathab.com/africa/the-great-namibia-wildlife-safari/`);
+    });
+}
 export const clickCTA = (text) => {
     it(`Clicks the appropriate button`, function () {
         cy.get(text).click({
@@ -95,6 +102,18 @@ export const utmValueTrue = () => {
         cy.get('[ctest=utm_form]').find('#recentConversionAction').should('not.have.value', '');
     });
 }
+
+export const noUTMurlfilled = () => {
+    it('Makes sure that UTM values ARE being pulled from url queries', function () {
+        cy.get('[ctest=utm_form]').find('#utmcampaign').should('have.value', '');
+        cy.get('[ctest=utm_form]').find('#utmcontent').should('have.value', '');
+        cy.get('[ctest=utm_form]').find('#utmmedium').should('have.value', '');
+        cy.get('[ctest=utm_form]').find('#utmsource').should('not.have.value', '');
+        cy.get('[ctest=utm_form]').find('#utmterm').should('have.value', '');
+        cy.get('[ctest=utm_form]').find('#recentConversionAction').should('not.have.value', '');
+    });
+}
+
 export const utmValueFalse = () => {
     it('Makes sure that UTM values ARE NOT being pulled from url queries', function () {
         cy.get('[ctest=utm_form]').find('#utmcampaign').should('have.value', '');
@@ -115,6 +134,15 @@ export const addressDataTrue = () => {
         cy.get('[ctest=utm_form]').find('#Country').should('not.have.value', '');
     })
 }
+export const addressDataFalse = () => {
+    it('Makes sure that the address info IS filled out', function () {
+        cy.get('[ctest=utm_form]').find('#Address').should('have.value', '');
+        cy.get('[ctest=utm_form]').find('#City').should('have.value', '');
+        cy.get('[ctest=utm_form]').find('#State').should('have.value', '');
+        cy.get('[ctest=utm_form]').find('#PostalCode').should('have.value', '');
+        cy.get('[ctest=utm_form]').find('#Country').should('have.value', '');
+    })
+}
 
 export const utmSecondaryTrue = () => {
     it('confirms secondary utm info IS populated', function () {
@@ -123,30 +151,6 @@ export const utmSecondaryTrue = () => {
     })
 }
 
-export const utmLeadSourceTrue = () => {
-    it('confrims that the Lead Source field is NOT empty', function () {
-        cy.get('[ctest=utm_form]').find('#LeadSource').should('not.have.value', '');
-    })
-}
-
-export const utmLeadSourceFalse = () => {
-    it('confrims that the Lead Source field IS empty', function () {
-        cy.get('[ctest=utm_form]').find('#LeadSource').should('have.value', '');
-    })
-}
-
-export const utmSourceDetailFalse = () => {
-    it('confrims that the Source Detail field IS empty', function () {
-        cy.get('[ctest=utm_form]').find('#sourceDetail').should('have.value', '');
-    })
-}
-export const utmSourceDetailTrue = () => {
-    it('confrims that the Source Detail field is NOT empty', function () {
-        cy.get('[ctest=utm_form]').find('#sourceDetail').should('not.have.value', '');
-    })
-}
-
-
 export const utmSecondaryFalse = () => {
     it('confirms secondary utm info IS NOT populated', function () {
         cy.get('[ctest=utm_form]').find('#LeadSource').should('have.value', '');
@@ -154,21 +158,20 @@ export const utmSecondaryFalse = () => {
     })
 }
 
-export const recentTripUrlTrue = () => {
-    it('makes sure that Recent Trip PDF Url field IS FILLED IN', function () {
-        cy.get('[ctest=utm_form]').find('#recentTripPDFURL').should('not.have.value', '');
-    });
-}
-
-export const recentTripUrlFalse = () => {
-    it('makes sure that Recent Trip PDF Url field IS EMPTY', function () {
-        cy.get('[ctest=utm_form]').find('#recentTripPDFURL').should('have.value', '');
-    });
-}
-
 export const catTemp = () => {
     it('makes sure temp IS filled in', function () {
         cy.get('[ctest=utm_form]').find('#temp').should('not.have.value', '');
+    })
+}
+export const sourceDetail = () => {
+    it('makes sure temp IS filled in', function () {
+        cy.get('[ctest=utm_form]').find('#sourceDetail').should('not.have.value', '');
+    })
+}
+
+export const leadSourceFalse = () => {
+    it('makes sure temp IS filled in', function () {
+        cy.get('[ctest=utm_form]').find('#LeadSource').should('have.value', '');
     })
 }
 export const catTempFalse = () => {
@@ -177,6 +180,12 @@ export const catTempFalse = () => {
     })
 }
 
+export const pdfInfoTrue = () => {
+    it('checks to make sure the recent trip PDF fields are filled', function () {
+        cy.get('[ctest=utm_form]').find('#recentTripPDFRequest').should('not.have.value', '');
+        cy.get('[ctest=utm_form]').find('#recentTripPDFURL').should('not.have.value', '');
+    })
+}
 export const uncheckBox = (formID, checkbox) => {
     it('unchecks request box', function () {
         cy.get(formID).find(checkbox).uncheck();

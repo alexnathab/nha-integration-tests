@@ -22,7 +22,11 @@ import {
     recentTripUrlTrue,
     recentTripUrlFalse,
     utmLeadSourceTrue,
-    utmSourceDetailFalse
+    utmSourceDetailFalse,
+    pdfInfoTrue,
+    addressDataFalse,
+    getNoUTMURL,
+    noUTMurlfilled
 } from './components/utils'
 
 // TEST 1 -- no checks 
@@ -35,14 +39,34 @@ describe(`PDF Form Test - Nothing Checked | INCLUDES UTM CODES`, function () {
     requiredInfo('#form-pdf');
     uncheckBox('#form-pdf', '#requestNewsletter');
     submitForm('#form-pdf-submit');
-    utmPersonalInfoFalse();
-    utmSecondaryFalse();
+    utmPersonalInfoTrue();
+    utmSecondaryTrue();
+    pdfInfoTrue();
     catTempFalse();
     utmOptInFalse();
-    utmValueFalse();
+    utmValueTrue();
+    addressDataFalse();
+});
+describe(`PDF Form Test - Nothing Checked | NO UTM CODES`, function () {
+    getNoUTMURL('https://dev.');
+    clickCTA(`[ctest=pdf_cta]`);
+    checkVisibility('[ctest=pdf_lightbox]', '#form-pdf');
+    submitForm('#form-pdf-submit');
+    checkValidity('#form-pdf');
+    requiredInfo('#form-pdf');
+    uncheckBox('#form-pdf', '#requestNewsletter');
+    submitForm('#form-pdf-submit');
+    utmPersonalInfoTrue();
+    utmSecondaryTrue();
+    pdfInfoTrue();
+    catTempFalse();
+    utmOptInFalse();
+    noUTMurlfilled();
+    addressDataFalse();
 });
 
-//TEST 2 -- enews checked only 
+
+// //TEST 2 -- enews checked only 
 describe(`PDF Form Test - eNews Checked | INCLUDES UTM CODES`, function () {
     getURL('https://dev.', '');
     clickCTA(`[ctest=pdf_cta]`);
@@ -53,12 +77,30 @@ describe(`PDF Form Test - eNews Checked | INCLUDES UTM CODES`, function () {
     submitForm('#form-pdf-submit');
     utmPersonalInfoTrue();
     utmSecondaryTrue();
+    pdfInfoTrue();
     catTempFalse();
     utmOptInTrue();
     utmValueTrue();
+    addressDataFalse();
+});
+describe(`PDF Form Test - eNews Checked | NO UTM CODES`, function () {
+    getNoUTMURL('https://dev.');
+    clickCTA(`[ctest=pdf_cta]`);
+    checkVisibility('[ctest=pdf_lightbox]', '#form-pdf');
+    submitForm('#form-pdf-submit');
+    checkValidity('#form-pdf');
+    requiredInfo('#form-pdf');
+    submitForm('#form-pdf-submit');
+    utmPersonalInfoTrue();
+    utmSecondaryTrue();
+    pdfInfoTrue();
+    catTempFalse();
+    utmOptInTrue();
+    noUTMurlfilled();
+    addressDataFalse();
 });
 
-// TEST 3 -- cat checked only 
+// // TEST 3 -- cat checked only 
 describe(`PDF Form Test - Catalog Checked | INCLUDES UTM CODES`, function () {
     getURL('https://dev.', '');
     clickCTA(`[ctest=pdf_cta]`);
@@ -70,17 +112,33 @@ describe(`PDF Form Test - Catalog Checked | INCLUDES UTM CODES`, function () {
     checkbox('#form-pdf', '#requestCatalog');
     shipInfo('#form-pdf');
     submitForm('#form-pdf-submit');
-    utmPersonalInfoTrue();
-    utmSourceDetailFalse();
-    utmLeadSourceTrue();
-    recentTripUrlFalse();
-    catTempFalse();
+    utmSecondaryTrue();
+    pdfInfoTrue();
+    catTemp();
     utmOptInFalse();
     utmValueTrue();
     addressDataTrue();
 });
+describe(`PDF Form Test - Catalog Checked | NO UTM CODES`, function () {
+    getNoUTMURL('https://dev.');
+    clickCTA(`[ctest=pdf_cta]`);
+    checkVisibility('[ctest=pdf_lightbox]', '#form-pdf');
+    submitForm('#form-pdf-submit');
+    checkValidity('#form-pdf');
+    requiredInfo('#form-pdf');
+    uncheckBox('#form-pdf', '#requestNewsletter');
+    checkbox('#form-pdf', '#requestCatalog');
+    shipInfo('#form-pdf');
+    submitForm('#form-pdf-submit');
+    utmSecondaryTrue();
+    pdfInfoTrue();
+    catTemp();
+    utmOptInFalse();
+    noUTMurlfilled();
+    addressDataTrue();
+});
 
-// TEST 4 -- both enews and catalog checked
+// // TEST 4 -- both enews and catalog checked
 describe(`PDF Form Test - Catalog & eNews Checked | INCLUDES UTM CODES`, function () {
     getURL('https://dev.', '');
     clickCTA(`[ctest=pdf_cta]`);
@@ -93,9 +151,27 @@ describe(`PDF Form Test - Catalog & eNews Checked | INCLUDES UTM CODES`, functio
     submitForm('#form-pdf-submit');
     utmPersonalInfoTrue();
     utmSecondaryTrue();
-    recentTripUrlTrue();
+    pdfInfoTrue();
     catTemp();
     utmOptInTrue();
     utmValueTrue();
+    addressDataTrue();
+});
+describe(`PDF Form Test - Catalog & eNews Checked | NO UTM CODES`, function () {
+    getNoUTMURL('https://dev.');
+    clickCTA(`[ctest=pdf_cta]`);
+    checkVisibility('[ctest=pdf_lightbox]', '#form-pdf');
+    submitForm('#form-pdf-submit');
+    checkValidity('#form-pdf');
+    requiredInfo('#form-pdf');
+    checkbox('#form-pdf', '#requestCatalog');
+    shipInfo('#form-pdf');
+    submitForm('#form-pdf-submit');
+    utmPersonalInfoTrue();
+    utmSecondaryTrue();
+    pdfInfoTrue();
+    catTemp();
+    utmOptInTrue();
+    noUTMurlfilled();
     addressDataTrue();
 });

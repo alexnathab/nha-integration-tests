@@ -11,7 +11,15 @@ import {
     utmPersonalInfoFalse,
     utmOptInFalse,
     utmValueFalse,
-    uncheckBox
+    uncheckBox,
+    addressDataFalse,
+    utmSecondaryFalse,
+    catTempFalse,
+    utmSecondaryTrue,
+    getNoUTMURL,
+    noUTMurlfilled,
+    leadSourceFalse,
+    sourceDetail
 } from './components/utils'
 
 var cta_buttons = {
@@ -23,7 +31,7 @@ var cta_buttons = {
 
 // TEST 1 eNewsletter CHECKED
 
-describe(`Ask Form Test - eNews checked`, function () {
+describe(`Ask Form Test - eNews checked | INCLUDES UTM CODES`, function () {
     //Validity Check
     getURL('https://dev.', '');
     clickCTA(`${cta_buttons.id}`);
@@ -34,13 +42,34 @@ describe(`Ask Form Test - eNews checked`, function () {
     requiredInfo('#form-ask')
     submitForm('#form-ask-submit');
     utmPersonalInfoTrue();
+    utmSecondaryTrue();
+    catTempFalse();
     utmOptInTrue();
     utmValueTrue();
+    addressDataFalse();
+})
+
+describe(`Ask Form Test - eNews checked | NO UTM CODES`, function () {
+    //Validity Check
+    getNoUTMURL('https://dev.');
+    clickCTA(`${cta_buttons.id}`);
+    checkVisibility('[ctest=ask_cta_lightbox]', '#form-ask');
+    submitForm('#form-ask-submit');
+    checkValidity('#form-ask');
+    //Secret Marketo Form Check
+    requiredInfo('#form-ask')
+    submitForm('#form-ask-submit');
+    utmPersonalInfoTrue();
+    utmSecondaryTrue();
+    catTempFalse();
+    utmOptInTrue();
+    noUTMurlfilled();
+    addressDataFalse();
 })
 
 // TEST 2 eNewsletter NOT CHECKED
 
-describe(`Ask Form Test - nothing checked`, function () {
+describe(`Ask Form Test - nothing checked | INCLUDES UTM CODES`, function () {
     //Validity Check
     getURL("https://dev.", '');
     clickCTA(`${cta_buttons.id}`);
@@ -52,6 +81,28 @@ describe(`Ask Form Test - nothing checked`, function () {
     uncheckBox('#form-ask', '#requestNewsletter');
     submitForm('#form-ask-submit');
     utmPersonalInfoFalse();
+    utmSecondaryFalse();
+    catTempFalse();
     utmOptInFalse();
     utmValueFalse();
+    addressDataFalse();
+})
+describe(`Ask Form Test - nothing checked | NO UTM CODES`, function () {
+    //Validity Check
+    getNoUTMURL("https://dev.");
+    clickCTA(`${cta_buttons.id}`);
+    checkVisibility('[ctest=ask_cta_lightbox]', '#form-ask');
+    submitForm('#form-ask-submit');
+    checkValidity('#form-ask');
+    //Secret Marketo Form Check
+    requiredInfo('#form-ask')
+    uncheckBox('#form-ask', '#requestNewsletter');
+    submitForm('#form-ask-submit');
+    utmPersonalInfoFalse();
+    sourceDetail();
+    leadSourceFalse();
+    catTempFalse();
+    utmOptInFalse();
+    utmValueFalse();
+    addressDataFalse();
 })
