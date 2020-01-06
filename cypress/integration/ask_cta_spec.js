@@ -33,7 +33,7 @@ var cta_buttons = {
 
 describe(`Ask Form Test - eNews checked | INCLUDES UTM CODES`, function () {
     //Validity Check
-    getURL('https://dev.', '');
+    getURL('https://solo.', '');
     clickCTA(`${cta_buttons.id}`);
     checkVisibility('[ctest=ask_cta_lightbox]', '#form-ask');
     submitForm('#form-ask-submit');
@@ -51,7 +51,7 @@ describe(`Ask Form Test - eNews checked | INCLUDES UTM CODES`, function () {
 
 describe(`Ask Form Test - eNews checked | NO UTM CODES`, function () {
     //Validity Check
-    getNoUTMURL('https://dev.');
+    getNoUTMURL('https://solo.');
     clickCTA(`${cta_buttons.id}`);
     checkVisibility('[ctest=ask_cta_lightbox]', '#form-ask');
     submitForm('#form-ask-submit');
@@ -71,7 +71,7 @@ describe(`Ask Form Test - eNews checked | NO UTM CODES`, function () {
 
 describe(`Ask Form Test - nothing checked | INCLUDES UTM CODES`, function () {
     //Validity Check
-    getURL("https://dev.", '');
+    getURL("https://solo.", '');
     clickCTA(`${cta_buttons.id}`);
     checkVisibility('[ctest=ask_cta_lightbox]', '#form-ask');
     submitForm('#form-ask-submit');
@@ -91,7 +91,7 @@ describe(`Ask Form Test - nothing checked | INCLUDES UTM CODES`, function () {
 })
 describe(`Ask Form Test - nothing checked | NO UTM CODES`, function () {
     //Validity Check
-    getNoUTMURL("https://dev.");
+    getNoUTMURL("https://solo.");
     clickCTA(`${cta_buttons.id}`);
     checkVisibility('[ctest=ask_cta_lightbox]', '#form-ask');
     submitForm('#form-ask-submit');
