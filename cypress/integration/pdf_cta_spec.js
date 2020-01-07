@@ -31,7 +31,7 @@ import {
 
 // TEST 1 -- no checks 
 describe(`PDF Form Test - Nothing Checked | INCLUDES UTM CODES`, function () {
-    getURL('https://solo.', '');
+    getURL('https://alex.', '');
     clickCTA(`[ctest=pdf_cta]`);
     checkVisibility('[ctest=pdf_lightbox]', '#form-pdf');
     submitForm('#form-pdf-submit');
@@ -48,7 +48,7 @@ describe(`PDF Form Test - Nothing Checked | INCLUDES UTM CODES`, function () {
     addressDataFalse();
 });
 describe(`PDF Form Test - Nothing Checked | NO UTM CODES`, function () {
-    getNoUTMURL('https://solo.');
+    getNoUTMURL('https://alex.');
     clickCTA(`[ctest=pdf_cta]`);
     checkVisibility('[ctest=pdf_lightbox]', '#form-pdf');
     submitForm('#form-pdf-submit');
@@ -68,7 +68,7 @@ describe(`PDF Form Test - Nothing Checked | NO UTM CODES`, function () {
 
 // //TEST 2 -- enews checked only 
 describe(`PDF Form Test - eNews Checked | INCLUDES UTM CODES`, function () {
-    getURL('https://solo.', '');
+    getURL('https://alex.', '');
     clickCTA(`[ctest=pdf_cta]`);
     checkVisibility('[ctest=pdf_lightbox]', '#form-pdf');
     submitForm('#form-pdf-submit');
@@ -84,7 +84,7 @@ describe(`PDF Form Test - eNews Checked | INCLUDES UTM CODES`, function () {
     addressDataFalse();
 });
 describe(`PDF Form Test - eNews Checked | NO UTM CODES`, function () {
-    getNoUTMURL('https://solo.');
+    getNoUTMURL('https://alex.');
     clickCTA(`[ctest=pdf_cta]`);
     checkVisibility('[ctest=pdf_lightbox]', '#form-pdf');
     submitForm('#form-pdf-submit');
@@ -102,7 +102,7 @@ describe(`PDF Form Test - eNews Checked | NO UTM CODES`, function () {
 
 // // TEST 3 -- cat checked only 
 describe(`PDF Form Test - Catalog Checked | INCLUDES UTM CODES`, function () {
-    getURL('https://solo.', '');
+    getURL('https://alex.', '');
     clickCTA(`[ctest=pdf_cta]`);
     checkVisibility('[ctest=pdf_lightbox]', '#form-pdf');
     submitForm('#form-pdf-submit');
@@ -120,7 +120,7 @@ describe(`PDF Form Test - Catalog Checked | INCLUDES UTM CODES`, function () {
     addressDataTrue();
 });
 describe(`PDF Form Test - Catalog Checked | NO UTM CODES`, function () {
-    getNoUTMURL('https://solo.');
+    getNoUTMURL('https://alex.');
     clickCTA(`[ctest=pdf_cta]`);
     checkVisibility('[ctest=pdf_lightbox]', '#form-pdf');
     submitForm('#form-pdf-submit');
@@ -140,7 +140,7 @@ describe(`PDF Form Test - Catalog Checked | NO UTM CODES`, function () {
 
 // // TEST 4 -- both enews and catalog checked
 describe(`PDF Form Test - Catalog & eNews Checked | INCLUDES UTM CODES`, function () {
-    getURL('https://solo.', '');
+    getURL('https://alex.', '');
     clickCTA(`[ctest=pdf_cta]`);
     checkVisibility('[ctest=pdf_lightbox]', '#form-pdf');
     submitForm('#form-pdf-submit');
@@ -158,7 +158,7 @@ describe(`PDF Form Test - Catalog & eNews Checked | INCLUDES UTM CODES`, functio
     addressDataTrue();
 });
 describe(`PDF Form Test - Catalog & eNews Checked | NO UTM CODES`, function () {
-    getNoUTMURL('https://solo.');
+    getNoUTMURL('https://alex.');
     clickCTA(`[ctest=pdf_cta]`);
     checkVisibility('[ctest=pdf_lightbox]', '#form-pdf');
     submitForm('#form-pdf-submit');
