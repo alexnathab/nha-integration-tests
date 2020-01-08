@@ -26,7 +26,7 @@ describe(`Itinerary Pop Up Form Test - nothing checked | INCLUDES UTM CODES`, fu
     beforeEach(function () {
         Cypress.Cookies.preserveOnce('__utma', '__utmb', '__utmc', '__utmt', '__utmz');
     })
-    getURL('https://alex.', '');
+    getURL('https://dev.', '');
     checkVisibility('[tripnav~="wrapper"]', '#trip-nav-ul-li-2');
     it(`finds the Itinerary subnav link and clicks it`, function () {
         cy.get('[tripnav~="wrapper"]').find('#trip-nav-ul-li-2').click();
@@ -45,7 +45,7 @@ describe(`Itinerary Pop Up Form Test - nothing checked | INCLUDES UTM CODES`, fu
 });
 
 describe(`Itinerary Pop Up Form Test - nothing checked | NO UTM CODES`, function () {
-    getNoUTMURL('https://alex.');
+    getNoUTMURL('https://dev.');
     checkVisibility('[tripnav~="wrapper"]', '#trip-nav-ul-li-2');
     it(`finds the Itinerary subnav link and clicks it`, function () {
         cy.get('[tripnav~="wrapper"]').find('#trip-nav-ul-li-2').click();
@@ -68,7 +68,7 @@ describe(`Itinerary Pop Up Form Test - Catalog checked | INCLUDES UTM CODES`, fu
     beforeEach(function () {
         Cypress.Cookies.preserveOnce('__utma', '__utmb', '__utmc', '__utmt', '__utmz');
     })
-    getURL('https://alex.', '');
+    getURL('https://dev.', '');
     checkVisibility('[tripnav~="wrapper"]', '#trip-nav-ul-li-2');
     it(`finds the Itinerary subnav link and clicks it`, function () {
         cy.get('[tripnav~="wrapper"]').find('#trip-nav-ul-li-2').click();
@@ -89,7 +89,7 @@ describe(`Itinerary Pop Up Form Test - Catalog checked | INCLUDES UTM CODES`, fu
 });
 
 describe(`Itinerary Pop Up Form Test - Catalog checked | NO UTM CODES`, function () {
-    getNoUTMURL('https://alex.');
+    getNoUTMURL('https://dev.');
     checkVisibility('[tripnav~="wrapper"]', '#trip-nav-ul-li-2');
     it(`finds the Itinerary subnav link and clicks it`, function () {
         cy.get('[tripnav~="wrapper"]').find('#trip-nav-ul-li-2').click();

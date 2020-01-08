@@ -51,7 +51,7 @@ export const checkValidity = (formID) => {
 
 export const requiredInfo = (formID) => {
     it('Fills in required forms', function () {
-        cy.get(formID).find('#first_name').type('Alex-Test');
+        cy.get(formID).find('#first_name').type('dev-Test');
         cy.get(formID).find('#last_name').type('Test');
         cy.get(formID).find('#email').type('test@solocreative.co');
     })
