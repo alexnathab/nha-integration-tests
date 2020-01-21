@@ -99,8 +99,19 @@ export const utmValueTrue = () => {
         cy.get('[ctest=utm_form]').find('#utmmedium').should('not.have.value', '');
         cy.get('[ctest=utm_form]').find('#utmsource').should('not.have.value', '');
         cy.get('[ctest=utm_form]').find('#utmterm').should('not.have.value', '');
-        cy.get('[ctest=utm_form]').find('#recentConversionAction').should('not.have.value', '');
+        // cy.get('[ctest=utm_form]').find('#recentConversionAction').should('not.have.value', '');
     });
+}
+
+export const recentConversionAction = () => {
+    it('registers a true recent conversion action', function () {
+        cy.get('[ctest=utm_form]').find('#recentConversionAction').should('not.have.value', '');
+    })
+}
+export const recentConversionActionFalse = () => {
+    it('registers an empty recent conversion action', function () {
+        cy.get('[ctest=utm_form]').find('#recentConversionAction').should('have.value', '');
+    })
 }
 
 export const noUTMurlfilled = () => {
@@ -135,7 +146,7 @@ export const addressDataTrue = () => {
     })
 }
 export const addressDataFalse = () => {
-    it('Makes sure that the address info IS filled out', function () {
+    it('Makes sure that the address info IS NOT filled out', function () {
         cy.get('[ctest=utm_form]').find('#Address').should('have.value', '');
         cy.get('[ctest=utm_form]').find('#City').should('have.value', '');
         cy.get('[ctest=utm_form]').find('#State').should('have.value', '');
@@ -164,13 +175,13 @@ export const catTemp = () => {
     })
 }
 export const sourceDetail = () => {
-    it('makes sure temp IS filled in', function () {
+    it('makes sure sourceDetail IS filled in', function () {
         cy.get('[ctest=utm_form]').find('#sourceDetail').should('not.have.value', '');
     })
 }
 
 export const leadSourceFalse = () => {
-    it('makes sure temp IS filled in', function () {
+    it('makes sure that LeadSource is empty', function () {
         cy.get('[ctest=utm_form]').find('#LeadSource').should('have.value', '');
     })
 }
