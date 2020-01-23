@@ -32,67 +32,67 @@ var cta_buttons = {
 
 // TEST 1 eNewsletter CHECKED
 
-// describe(`Ask Form Test - eNews checked | INCLUDES UTM CODES`, function () {
-//     //Validity Check
-//     getURL('alex.', '');
-//     clickCTA('[ctest=ask_cta]');
-//     checkVisibility('[ctest=ask_cta_lightbox]', '#form-ask');
-//     submitForm('#form-ask-submit');
-//     checkValidity('#form-ask');
-//     //Secret Marketo Form Check
-//     requiredInfo('#form-ask')
-//     submitForm('#form-ask-submit');
-//     utmPersonalInfoTrue();
-//     utmSecondaryTrue();
-//     catTempFalse();
-//     utmOptInTrue();
-//     utmValueTrue();
-//     addressDataFalse();
-// })
+describe(`Ask Form Test - eNews checked | INCLUDES UTM CODES`, function () {
+    //Validity Check
+    getURL('alex.', '');
+    clickCTA('[ctest=ask_cta]');
+    checkVisibility('[ctest=ask_cta_lightbox]', '#form-ask');
+    submitForm('#form-ask-submit');
+    checkValidity('#form-ask');
+    //Secret Marketo Form Check
+    requiredInfo('#form-ask')
+    submitForm('#form-ask-submit');
+    utmPersonalInfoTrue();
+    utmSecondaryTrue();
+    catTempFalse();
+    utmOptInTrue();
+    utmValueTrue();
+    addressDataFalse();
+})
 
-// describe(`Ask Form Test - eNews checked | NO UTM CODES`, function () {
-//     //Validity Check
-//     getNoUTMURL('alex.');
-//     clickCTA(`[ctest=ask_cta]`);
-//     checkVisibility('[ctest=ask_cta_lightbox]', '#form-ask');
-//     submitForm('#form-ask-submit');
-//     checkValidity('#form-ask');
-//     //Secret Marketo Form Check
-//     requiredInfo('#form-ask')
-//     submitForm('#form-ask-submit');
-//     utmPersonalInfoTrue();
-//     utmSecondaryTrue();
-//     catTempFalse();
-//     utmOptInTrue();
-//     noUTMurlfilled();
-//     addressDataFalse();
-// })
+describe(`Ask Form Test - eNews checked | NO UTM CODES`, function () {
+    //Validity Check
+    getNoUTMURL('alex.');
+    clickCTA(`[ctest=ask_cta]`);
+    checkVisibility('[ctest=ask_cta_lightbox]', '#form-ask');
+    submitForm('#form-ask-submit');
+    checkValidity('#form-ask');
+    //Secret Marketo Form Check
+    requiredInfo('#form-ask')
+    submitForm('#form-ask-submit');
+    utmPersonalInfoTrue();
+    utmSecondaryTrue();
+    catTempFalse();
+    utmOptInTrue();
+    noUTMurlfilled();
+    addressDataFalse();
+})
 
 // TEST 2 eNewsletter NOT CHECKED
 //TRIPLE CHECK WITH MEGAN -- should personal data be sent to Marketo as of now because we are forgetting
 //about forms.nathab???
 
-// describe(`Ask Form Test - nothing checked | INCLUDES UTM CODES`, function () {
-//     context('desktop', function () {
-//         //Validity Check
-//         getURL("alex.", '');
-//         clickCTA(`[ctest=ask_cta]`);
-//         checkVisibility('[ctest=ask_cta_lightbox]', '#form-ask');
-//         submitForm('#form-ask-submit');
-//         checkValidity('#form-ask');
-//         //Secret Marketo Form Check
-//         requiredInfo('#form-ask')
-//         uncheckBox('#form-ask', '#requestNewsletter');
-//         submitForm('#form-ask-submit');
-//         utmPersonalInfoTrue();
-//         utmSecondaryFalse();
-//         catTempFalse();
-//         utmOptInFalse();
-//         utmValueTrue();
-//         recentConversionAction();
-//         addressDataFalse();
-//     });
-// });
+describe(`Ask Form Test - nothing checked | INCLUDES UTM CODES`, function () {
+    context('desktop', function () {
+        //Validity Check
+        getURL("alex.", '');
+        clickCTA(`[ctest=ask_cta]`);
+        checkVisibility('[ctest=ask_cta_lightbox]', '#form-ask');
+        submitForm('#form-ask-submit');
+        checkValidity('#form-ask');
+        //Secret Marketo Form Check
+        requiredInfo('#form-ask')
+        uncheckBox('#form-ask', '#requestNewsletter');
+        submitForm('#form-ask-submit');
+        utmPersonalInfoTrue();
+        utmSecondaryFalse();
+        catTempFalse();
+        utmOptInFalse();
+        utmValueTrue();
+        recentConversionAction();
+        addressDataFalse();
+    });
+});
 // context('mobile', function () {
 //     beforeEach(function () {
 //         cy.viewport('iphone-6')
@@ -133,6 +133,6 @@ describe(`Ask Form Test - nothing checked | NO UTM CODES`, function () {
     leadSourceFalse();
     catTempFalse();
     utmOptInFalse();
-    utmValueFalse();
+    noUTMurlfilled();
     addressDataFalse();
 })
