@@ -20,7 +20,8 @@ import {
     noUTMurlfilled,
     leadSourceFalse,
     sourceDetail,
-    recentConversionAction
+    recentConversionAction,
+    recentConversionActionFalse
 } from './components/utils'
 
 var cta_buttons = {
@@ -84,12 +85,18 @@ describe(`Ask Form Test - nothing checked | INCLUDES UTM CODES`, function () {
         requiredInfo('#form-ask')
         uncheckBox('#form-ask', '#requestNewsletter');
         submitForm('#form-ask-submit');
-        utmPersonalInfoTrue();
-        utmSecondaryFalse();
+        //NEXT PUSH CHANGE BELOW
+        // utmPersonalInfoTrue();
+        utmPersonalInfoFalse();
+        // utmSecondaryFalse();
+        sourceDetail();
+        leadSourceFalse()
         catTempFalse();
         utmOptInFalse();
-        utmValueTrue();
-        recentConversionAction();
+        // utmValueTrue();
+        utmValueFalse();
+        // recentConversionAction();
+        recentConversionActionFalse();
         addressDataFalse();
     });
 });
@@ -128,11 +135,14 @@ describe(`Ask Form Test - nothing checked | NO UTM CODES`, function () {
     requiredInfo('#form-ask')
     uncheckBox('#form-ask', '#requestNewsletter');
     submitForm('#form-ask-submit');
-    utmPersonalInfoTrue();
-    utmSecondaryFalse();
+    // utmPersonalInfoTrue();
+    utmPersonalInfoFalse();
+    // utmSecondaryFalse();
+    sourceDetail();
     leadSourceFalse();
     catTempFalse();
     utmOptInFalse();
-    noUTMurlfilled();
+    // noUTMurlfilled();
+    utmValueFalse();
     addressDataFalse();
 })
