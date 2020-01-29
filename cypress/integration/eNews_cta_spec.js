@@ -23,7 +23,7 @@ describe(`eNews Form Test | INCLUDES UTM CODES`, function () {
     context('desktop', function () {
         it(`Visits a trip specific url with UTM codes in the queries`, function () {
             //the following string is full of queries and thus is being used for testing
-            cy.visit(`https://dev.nathab.com/?banner&utm_source=TEST&utm_medium=TEST&utm_content=TEST&utm_campaign=TEST&utm_term=TEST`);
+            cy.visit(`https://www.nathab.com/?banner&utm_source=TEST&utm_medium=TEST&utm_content=TEST&utm_campaign=TEST&utm_term=TEST`);
         });
         clickCTA(`${cta_buttons.id}`);
         checkVisibility('[ctest=utm_enews]', '#form-enews');
@@ -42,7 +42,7 @@ describe(`eNews Form Test | INCLUDES UTM CODES`, function () {
             cy.viewport('iphone-6')
             cy.wait(2000);
         })
-        getURL("https://dev.", "");
+        getURL("https://www.", "");
         clickCTA('[for="mobile-more"]');
         clickCTA('[more-nav="button"][for="mobile-enews"]');
         submitForm('#form-enews-submit-mobile');
@@ -58,7 +58,7 @@ describe(`eNews Form Test | INCLUDES UTM CODES`, function () {
 
 describe(`eNews Form Test | NO UTM CODES`, function () {
     context('desktop', function () {
-        getNoUTMURL("https://dev.");
+        getNoUTMURL("https://www.");
         clickCTA(`${cta_buttons.id}`);
         checkVisibility('[ctest=utm_enews]', '#form-enews');
         submitForm('#form-enews-submit');
@@ -76,7 +76,7 @@ describe(`eNews Form Test | NO UTM CODES`, function () {
             cy.viewport('iphone-6')
             cy.wait(2000);
         })
-        getNoUTMURL("https://dev.");
+        getNoUTMURL("https://www.");
         clickCTA('[for="mobile-more"]');
         clickCTA('[more-nav="button"][for="mobile-enews"]');
         submitForm('#form-enews-submit-mobile');
