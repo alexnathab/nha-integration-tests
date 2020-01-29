@@ -125,6 +125,16 @@ export const noUTMurlfilled = () => {
     });
 }
 
+export const UTMOnlySource = () => {
+    it('Makes sure that UTM values ARE being pulled from url queries', function () {
+        cy.get('[ctest=utm_form]').find('#utmcampaign').should('have.value', '');
+        cy.get('[ctest=utm_form]').find('#utmcontent').should('have.value', '');
+        cy.get('[ctest=utm_form]').find('#utmmedium').should('have.value', '');
+        cy.get('[ctest=utm_form]').find('#utmsource').should('not.have.value', '');
+        cy.get('[ctest=utm_form]').find('#utmterm').should('have.value', '');
+    });
+}
+
 export const utmValueFalse = () => {
     it('Makes sure that UTM values ARE NOT being pulled from url queries', function () {
         cy.get('[ctest=utm_form]').find('#utmcampaign').should('have.value', '');
