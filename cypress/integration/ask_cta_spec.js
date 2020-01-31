@@ -37,7 +37,7 @@ var cta_buttons = {
 describe(`Ask Form Test - eNews checked | INCLUDES UTM CODES`, function () {
     //Validity Check
     context('desktop', function () {
-        getURL('https://www.', '');
+        getURL('alex.', '');
         clickCTA('[ctest=ask_cta]');
         checkVisibility('[ctest=ask_cta_lightbox]', '#form-ask');
         submitForm('#form-ask-submit');
@@ -57,7 +57,7 @@ describe(`Ask Form Test - eNews checked | INCLUDES UTM CODES`, function () {
             cy.viewport('iphone-6')
             cy.wait(2000);
         })
-        getURL("https://www.", '');
+        getURL("alex.", '');
         clickCTA("[tripnav-section='hamburger']");
         clickCTA("[for='mobile-ask']");
         checkVisibility('[ctest="ask-cta-card-mobile"]', '#form-ask-mobile');
@@ -78,7 +78,7 @@ describe(`Ask Form Test - eNews checked | INCLUDES UTM CODES`, function () {
 describe(`Ask Form Test - eNews checked | NO UTM CODES`, function () {
     context('desktop', function () {
         //Validity Check
-        getNoUTMURL('https://www.');
+        getNoUTMURL('alex.');
         clickCTA(`[ctest=ask_cta]`);
         checkVisibility('[ctest=ask_cta_lightbox]', '#form-ask');
         submitForm('#form-ask-submit');
@@ -98,7 +98,7 @@ describe(`Ask Form Test - eNews checked | NO UTM CODES`, function () {
             cy.viewport('iphone-6')
             cy.wait(2000);
         })
-        getNoUTMURL('https://www.');
+        getNoUTMURL('alex.');
         clickCTA("[tripnav-section='hamburger']");
         clickCTA("[for='mobile-ask']");
         checkVisibility('[ctest="ask-cta-card-mobile"]', '#form-ask-mobile');
@@ -122,7 +122,7 @@ describe(`Ask Form Test - eNews checked | NO UTM CODES`, function () {
 describe(`Ask Form Test - nothing checked | INCLUDES UTM CODES`, function () {
     context('desktop', function () {
         //Validity Check
-        getURL("https://www.", '');
+        getURL("alex.", '');
         clickCTA(`[ctest=ask_cta]`);
         checkVisibility('[ctest=ask_cta_lightbox]', '#form-ask');
         submitForm('#form-ask-submit');
@@ -150,7 +150,7 @@ describe(`Ask Form Test - nothing checked | INCLUDES UTM CODES`, function () {
             cy.viewport('iphone-6')
             cy.wait(2000);
         })
-        getURL("https://www.", '');
+        getURL("alex.", '');
         clickCTA("[tripnav-section='hamburger']");
         clickCTA("[for='mobile-ask']");
         checkVisibility('[ctest="ask-cta-card-mobile"]', '#form-ask-mobile');
@@ -172,7 +172,7 @@ describe(`Ask Form Test - nothing checked | INCLUDES UTM CODES`, function () {
 describe(`Ask Form Test - nothing checked | NO UTM CODES`, function () {
     context('desktop', function () {
         //Validity Check
-        getNoUTMURL("https://www.");
+        getNoUTMURL("alex.");
         clickCTA(`[ctest=ask_cta]`);
         checkVisibility('[ctest=ask_cta_lightbox]', '#form-ask');
         submitForm('#form-ask-submit');
@@ -198,7 +198,7 @@ describe(`Ask Form Test - nothing checked | NO UTM CODES`, function () {
             cy.viewport('iphone-6')
             cy.wait(2000);
         })
-        getNoUTMURL("https://www.");
+        getNoUTMURL("alex.");
         clickCTA("[tripnav-section='hamburger']");
         clickCTA("[for='mobile-ask']");
         checkVisibility('[ctest="ask-cta-card-mobile"]', '#form-ask-mobile');
