@@ -25,7 +25,7 @@ import {
 // TEST 1 -- no checks 
 describe(`PDF Form Test - Nothing Checked | INCLUDES UTM CODES`, function () {
     context('desktop', function () {
-        getURL('https://www.', '');
+        getURL('alex.', '');
         clickCTA(`[ctest=pdf_cta]`);
         checkVisibility('[ctest=pdf_lightbox]', '#form-pdf');
         submitForm('#form-pdf-submit');
@@ -46,7 +46,7 @@ describe(`PDF Form Test - Nothing Checked | INCLUDES UTM CODES`, function () {
             cy.viewport('iphone-6')
             cy.wait(2000);
         })
-        getURL('https://www.', '');
+        getURL('alex.', '');
         clickCTA("[tripnav-section='hamburger']");
         clickCTA("[for='mobile-pdf']");
         checkVisibility('[ctest="pdf-cta-card-mobile"]', '#form-pdf-mobile');
@@ -66,7 +66,7 @@ describe(`PDF Form Test - Nothing Checked | INCLUDES UTM CODES`, function () {
 });
 describe(`PDF Form Test - Nothing Checked | NO UTM CODES`, function () {
     context('desktop', function () {
-        getNoUTMURL('https://www.');
+        getNoUTMURL('alex.');
         clickCTA(`[ctest=pdf_cta]`);
         checkVisibility('[ctest=pdf_lightbox]', '#form-pdf');
         submitForm('#form-pdf-submit');
@@ -87,7 +87,7 @@ describe(`PDF Form Test - Nothing Checked | NO UTM CODES`, function () {
             cy.viewport('iphone-6')
             cy.wait(2000);
         })
-        getNoUTMURL('https://www.');
+        getNoUTMURL('alex.');
         clickCTA("[tripnav-section='hamburger']");
         clickCTA("[for='mobile-pdf']");
         checkVisibility('[ctest="pdf-cta-card-mobile"]', '#form-pdf-mobile');
@@ -110,7 +110,7 @@ describe(`PDF Form Test - Nothing Checked | NO UTM CODES`, function () {
 // // // //TEST 2 -- enews checked only 
 describe(`PDF Form Test - eNews Checked | INCLUDES UTM CODES`, function () {
     context('desktop', function () {
-        getURL('https://www.', '');
+        getURL('alex.', '');
         clickCTA(`[ctest=pdf_cta]`);
         checkVisibility('[ctest=pdf_lightbox]', '#form-pdf');
         submitForm('#form-pdf-submit');
@@ -130,7 +130,7 @@ describe(`PDF Form Test - eNews Checked | INCLUDES UTM CODES`, function () {
             cy.viewport('iphone-6')
             cy.wait(2000);
         })
-        getURL('https://www.', '');
+        getURL('alex.', '');
         clickCTA("[tripnav-section='hamburger']");
         clickCTA("[for='mobile-pdf']");
         checkVisibility('[ctest="pdf-cta-card-mobile"]', '#form-pdf-mobile');
@@ -149,7 +149,7 @@ describe(`PDF Form Test - eNews Checked | INCLUDES UTM CODES`, function () {
 });
 describe(`PDF Form Test - eNews Checked | NO UTM CODES`, function () {
     context('desktop', function () {
-        getNoUTMURL('https://www.');
+        getNoUTMURL('alex.');
         clickCTA(`[ctest=pdf_cta]`);
         checkVisibility('[ctest=pdf_lightbox]', '#form-pdf');
         submitForm('#form-pdf-submit');
@@ -169,7 +169,7 @@ describe(`PDF Form Test - eNews Checked | NO UTM CODES`, function () {
             cy.viewport('iphone-6')
             cy.wait(2000);
         })
-        getNoUTMURL('https://www.');
+        getNoUTMURL('alex.');
         clickCTA("[tripnav-section='hamburger']");
         clickCTA("[for='mobile-pdf']");
         checkVisibility('[ctest="pdf-cta-card-mobile"]', '#form-pdf-mobile');
@@ -190,7 +190,7 @@ describe(`PDF Form Test - eNews Checked | NO UTM CODES`, function () {
 // // // // TEST 3 -- cat checked only 
 describe(`PDF Form Test - Catalog Checked | INCLUDES UTM CODES`, function () {
     context('destkop', function () {
-        getURL('https://www.', '');
+        getURL('alex.', '');
         clickCTA(`[ctest=pdf_cta]`);
         checkVisibility('[ctest=pdf_lightbox]', '#form-pdf');
         submitForm('#form-pdf-submit');
@@ -214,7 +214,7 @@ describe(`PDF Form Test - Catalog Checked | INCLUDES UTM CODES`, function () {
             cy.viewport('iphone-6')
             cy.wait(2000);
         })
-        getURL('https://www.', '');
+        getURL('alex.', '');
         clickCTA("[tripnav-section='hamburger']");
         clickCTA("[for='mobile-pdf']");
         checkVisibility('[ctest="pdf-cta-card-mobile"]', '#form-pdf-mobile');
@@ -236,7 +236,7 @@ describe(`PDF Form Test - Catalog Checked | INCLUDES UTM CODES`, function () {
 });
 describe(`PDF Form Test - Catalog Checked | NO UTM CODES`, function () {
     context('desktop', function () {
-        getNoUTMURL('https://www.');
+        getNoUTMURL('alex.');
         clickCTA(`[ctest=pdf_cta]`);
         checkVisibility('[ctest=pdf_lightbox]', '#form-pdf');
         submitForm('#form-pdf-submit');
@@ -259,7 +259,7 @@ describe(`PDF Form Test - Catalog Checked | NO UTM CODES`, function () {
             cy.viewport('iphone-6')
             cy.wait(2000);
         })
-        getNoUTMURL('https://www.');
+        getNoUTMURL('alex.');
         clickCTA("[tripnav-section='hamburger']");
         clickCTA("[for='mobile-pdf']");
         checkVisibility('[ctest="pdf-cta-card-mobile"]', '#form-pdf-mobile');
@@ -283,7 +283,7 @@ describe(`PDF Form Test - Catalog Checked | NO UTM CODES`, function () {
 // // // // TEST 4 -- both enews and catalog checked
 describe(`PDF Form Test - Catalog & eNews Checked | INCLUDES UTM CODES`, function () {
     context('desktop', function () {
-        getURL('https://www.', '');
+        getURL('alex.', '');
         clickCTA(`[ctest=pdf_cta]`);
         checkVisibility('[ctest=pdf_lightbox]', '#form-pdf');
         submitForm('#form-pdf-submit');
@@ -305,7 +305,7 @@ describe(`PDF Form Test - Catalog & eNews Checked | INCLUDES UTM CODES`, functio
             cy.viewport('iphone-6')
             cy.wait(2000);
         })
-        getURL('https://www.', '');
+        getURL('alex.', '');
         clickCTA("[tripnav-section='hamburger']");
         clickCTA("[for='mobile-pdf']");
         checkVisibility('[ctest="pdf-cta-card-mobile"]', '#form-pdf-mobile');
@@ -327,7 +327,7 @@ describe(`PDF Form Test - Catalog & eNews Checked | INCLUDES UTM CODES`, functio
 });
 describe(`PDF Form Test - Catalog & eNews Checked | NO UTM CODES`, function () {
     context('desktop', function () {
-        getNoUTMURL('https://www.');
+        getNoUTMURL('alex.');
         clickCTA(`[ctest=pdf_cta]`);
         checkVisibility('[ctest=pdf_lightbox]', '#form-pdf');
         submitForm('#form-pdf-submit');
@@ -349,7 +349,7 @@ describe(`PDF Form Test - Catalog & eNews Checked | NO UTM CODES`, function () {
             cy.viewport('iphone-6')
             cy.wait(2000);
         })
-        getNoUTMURL('https://www.');
+        getNoUTMURL('alex.');
         clickCTA("[tripnav-section='hamburger']");
         clickCTA("[for='mobile-pdf']");
         checkVisibility('[ctest="pdf-cta-card-mobile"]', '#form-pdf-mobile');
