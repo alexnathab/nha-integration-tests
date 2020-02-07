@@ -40,20 +40,20 @@ export const submitForm = (text) => {
     });
 }
 
-export const checkValidity = (formID) => {
+export const checkValidity = (formID, formTarget) => {
     it(`Prompted with red outline in required fields`, function () {
-        cy.get(formID).find('#first_name').should('have.class', 'js-invalid');
-        cy.get(formID).find('#last_name').should('have.class', 'js-invalid');
-        cy.get(formID).find('#email').should('have.class', 'js-invalid');
+        cy.get(formID).find(`#${formTarget}-first_name`).should('have.class', 'js-invalid');
+        cy.get(formID).find(`#${formTarget}-last_name`).should('have.class', 'js-invalid');
+        cy.get(formID).find(`#${formTarget}-email`).should('have.class', 'js-invalid');
         cy.log('Please fill out required fields before submitting request');
     });
 }
 
-export const requiredInfo = (formID) => {
+export const requiredInfo = (formID, formTarget) => {
     it('Fills in required forms', function () {
-        cy.get(formID).find('#first_name').type('www-Test');
-        cy.get(formID).find('#last_name').type('Test');
-        cy.get(formID).find('#email').type('test@solocreative.com');
+        cy.get(formID).find(`#${formTarget}-first_name`).type('ALEX-Test');
+        cy.get(formID).find(`#${formTarget}-last_name`).type('ALEX-Test');
+        cy.get(formID).find(`#${formTarget}-email`).type('test@solocreative.com');
     })
 };
 

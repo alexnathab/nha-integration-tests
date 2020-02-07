@@ -41,9 +41,9 @@ describe(`Ask Form Test - eNews checked | INCLUDES UTM CODES`, function () {
         clickCTA('[ctest=ask_cta]');
         checkVisibility('[ctest=ask_cta_lightbox]', '#form-ask');
         submitForm('#form-ask-submit');
-        checkValidity('#form-ask');
+        checkValidity('#form-ask', 'form-ask');
         //Secret Marketo Form Check
-        requiredInfo('#form-ask')
+        requiredInfo('#form-ask', 'form-ask')
         submitForm('#form-ask-submit');
         utmPersonalInfoTrue();
         utmSecondaryTrue();
@@ -62,8 +62,8 @@ describe(`Ask Form Test - eNews checked | INCLUDES UTM CODES`, function () {
         clickCTA("[for='mobile-ask']");
         checkVisibility('[ctest="ask-cta-card-mobile"]', '#form-ask-mobile');
         submitForm('#form-ask-submit-mobile');
-        checkValidity('#form-ask-mobile');
-        requiredInfo('#form-ask-mobile')
+        checkValidity('#form-ask-mobile', 'form-ask-mobile');
+        requiredInfo('#form-ask-mobile', 'form-ask-mobile')
         submitForm('#form-ask-submit-mobile');
         utmPersonalInfoTrue();
         utmSecondaryTrue();
@@ -82,9 +82,9 @@ describe(`Ask Form Test - eNews checked | NO UTM CODES`, function () {
         clickCTA(`[ctest=ask_cta]`);
         checkVisibility('[ctest=ask_cta_lightbox]', '#form-ask');
         submitForm('#form-ask-submit');
-        checkValidity('#form-ask');
+        checkValidity('#form-ask', 'form-ask');
         //Secret Marketo Form Check
-        requiredInfo('#form-ask')
+        requiredInfo('#form-ask', 'form-ask')
         submitForm('#form-ask-submit');
         utmPersonalInfoTrue();
         utmSecondaryTrue();
@@ -103,8 +103,8 @@ describe(`Ask Form Test - eNews checked | NO UTM CODES`, function () {
         clickCTA("[for='mobile-ask']");
         checkVisibility('[ctest="ask-cta-card-mobile"]', '#form-ask-mobile');
         submitForm('#form-ask-submit-mobile');
-        checkValidity('#form-ask-mobile');
-        requiredInfo('#form-ask-mobile')
+        checkValidity('#form-ask-mobile', 'form-ask-mobile');
+        requiredInfo('#form-ask-mobile', 'form-ask-mobile')
         submitForm('#form-ask-submit-mobile');
         utmPersonalInfoTrue();
         utmSecondaryTrue();
@@ -126,9 +126,9 @@ describe(`Ask Form Test - nothing checked | INCLUDES UTM CODES`, function () {
         clickCTA(`[ctest=ask_cta]`);
         checkVisibility('[ctest=ask_cta_lightbox]', '#form-ask');
         submitForm('#form-ask-submit');
-        checkValidity('#form-ask');
+        checkValidity('#form-ask', 'form-ask');
         //Secret Marketo Form Check
-        requiredInfo('#form-ask')
+        requiredInfo('#form-ask', 'form-ask')
         uncheckBox('#form-ask', '#requestNewsletter');
         submitForm('#form-ask-submit');
         //NEXT PUSH CHANGE BELOW
@@ -155,8 +155,8 @@ describe(`Ask Form Test - nothing checked | INCLUDES UTM CODES`, function () {
         clickCTA("[for='mobile-ask']");
         checkVisibility('[ctest="ask-cta-card-mobile"]', '#form-ask-mobile');
         submitForm('#form-ask-submit-mobile');
-        checkValidity('#form-ask-mobile');
-        requiredInfo('#form-ask-mobile')
+        checkValidity('#form-ask-mobile', 'form-ask-mobile');
+        requiredInfo('#form-ask-mobile', 'form-ask-mobile')
         uncheckBox('#form-ask-mobile', '#requestNewsletter');
         submitForm('#form-ask-submit-mobile');
         utmPersonalInfoTrue();
@@ -176,9 +176,9 @@ describe(`Ask Form Test - nothing checked | NO UTM CODES`, function () {
         clickCTA(`[ctest=ask_cta]`);
         checkVisibility('[ctest=ask_cta_lightbox]', '#form-ask');
         submitForm('#form-ask-submit');
-        checkValidity('#form-ask');
+        checkValidity('#form-ask', 'form-ask');
         //Secret Marketo Form Check
-        requiredInfo('#form-ask')
+        requiredInfo('#form-ask', 'form-ask')
         uncheckBox('#form-ask', '#requestNewsletter');
         submitForm('#form-ask-submit');
         utmPersonalInfoTrue();
@@ -203,8 +203,8 @@ describe(`Ask Form Test - nothing checked | NO UTM CODES`, function () {
         clickCTA("[for='mobile-ask']");
         checkVisibility('[ctest="ask-cta-card-mobile"]', '#form-ask-mobile');
         submitForm('#form-ask-submit-mobile');
-        checkValidity('#form-ask-mobile');
-        requiredInfo('#form-ask-mobile')
+        checkValidity('#form-ask-mobile', 'form-ask-mobile');
+        requiredInfo('#form-ask-mobile', 'form-ask-mobile')
         uncheckBox('#form-ask-mobile', '#requestNewsletter');
         submitForm('#form-ask-submit-mobile');
         utmPersonalInfoTrue();

@@ -33,8 +33,8 @@ describe(`Itinerary Pop Up Form Test - nothing checked | INCLUDES UTM CODES`, fu
     });
     checkVisibility('[ctest=utm_itinerary]', '#form-itinerary');
     submitForm('#form-itinerary-submit');
-    checkValidity('#form-itinerary');
-    requiredInfo('#form-itinerary');
+    checkValidity('#form-itinerary', 'form-itinerary');
+    requiredInfo('#form-itinerary', 'form-itinerary');
     submitForm('#form-itinerary-submit');
     utmPersonalInfoTrue();
     utmSecondaryTrue();
@@ -52,8 +52,8 @@ describe(`Itinerary Pop Up Form Test - nothing checked | NO UTM CODES`, function
     });
     checkVisibility('[ctest=utm_itinerary]', '#form-itinerary');
     submitForm('#form-itinerary-submit');
-    checkValidity('#form-itinerary');
-    requiredInfo('#form-itinerary');
+    checkValidity('#form-itinerary', 'form-itinerary');
+    requiredInfo('#form-itinerary', 'form-itinerary');
     submitForm('#form-itinerary-submit');
     utmPersonalInfoTrue();
     utmSecondaryTrue();
@@ -75,8 +75,8 @@ describe(`Itinerary Pop Up Form Test - Catalog checked | INCLUDES UTM CODES`, fu
     });
     checkVisibility('[ctest=utm_itinerary]', '#form-itinerary');
     submitForm('#form-itinerary-submit');
-    checkValidity('#form-itinerary');
-    requiredInfo('#form-itinerary');
+    checkValidity('#form-itinerary', 'form-itinerary');
+    requiredInfo('#form-itinerary', 'form-itinerary');
     checkbox('#form-itinerary', '#requestCatalog');
     shipInfo('#form-itinerary');
     submitForm('#form-itinerary-submit');
@@ -96,8 +96,8 @@ describe(`Itinerary Pop Up Form Test - Catalog checked | NO UTM CODES`, function
     });
     checkVisibility('[ctest=utm_itinerary]', '#form-itinerary');
     submitForm('#form-itinerary-submit');
-    checkValidity('#form-itinerary');
-    requiredInfo('#form-itinerary');
+    checkValidity('#form-itinerary', 'form-itinerary');
+    requiredInfo('#form-itinerary', 'form-itinerary');
     checkbox('#form-itinerary', '#requestCatalog');
     shipInfo('#form-itinerary');
     submitForm('#form-itinerary-submit');
