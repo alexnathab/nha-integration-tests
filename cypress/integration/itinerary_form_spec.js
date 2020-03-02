@@ -42,6 +42,7 @@ describe(`Itinerary Pop Up Form Test - nothing checked | INCLUDES UTM CODES`, fu
     utmOptInTrue();
     utmValueTrue();
     addressDataFalse();
+    requestedAtTrue();
 });
 
 describe(`Itinerary Pop Up Form Test - nothing checked | NO UTM CODES`, function () {
@@ -61,6 +62,7 @@ describe(`Itinerary Pop Up Form Test - nothing checked | NO UTM CODES`, function
     utmOptInTrue();
     noUTMurlfilled();
     addressDataFalse();
+    requestedAtTrue();
 });
 
 //TEST 2 -- catalog box CHECKED
@@ -86,6 +88,7 @@ describe(`Itinerary Pop Up Form Test - Catalog checked | INCLUDES UTM CODES`, fu
     utmOptInTrue();
     utmValueTrue();
     addressDataTrue();
+    requestedAtTrue();
 });
 
 describe(`Itinerary Pop Up Form Test - Catalog checked | NO UTM CODES`, function () {
@@ -107,4 +110,5 @@ describe(`Itinerary Pop Up Form Test - Catalog checked | NO UTM CODES`, function
     utmOptInTrue();
     noUTMurlfilled();
     addressDataTrue();
+    requestedAtTrue();
 });

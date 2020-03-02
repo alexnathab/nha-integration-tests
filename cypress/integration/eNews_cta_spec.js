@@ -10,7 +10,8 @@ import {
     utmValueTrue,
     utmSecondaryTrue,
     noUTMurlfilled,
-    getNoUTMURL
+    getNoUTMURL,
+    requestedAtTrue
 } from './components/utils'
 
 var cta_buttons = {
@@ -36,6 +37,7 @@ describe(`eNews Form Test | INCLUDES UTM CODES`, function () {
         utmSecondaryTrue();
         utmOptInTrue();
         utmValueTrue();
+        requestedAtTrue();
     })
     context('mobile', function () {
         beforeEach(function () {
@@ -53,6 +55,7 @@ describe(`eNews Form Test | INCLUDES UTM CODES`, function () {
         utmSecondaryTrue();
         utmOptInTrue();
         utmValueTrue();
+        requestedAtTrue();
     })
 });
 
@@ -70,6 +73,7 @@ describe(`eNews Form Test | NO UTM CODES`, function () {
         utmSecondaryTrue();
         utmOptInTrue();
         noUTMurlfilled();
+        requestedAtTrue();
     })
     context('mobile', function () {
         beforeEach(function () {
@@ -87,5 +91,6 @@ describe(`eNews Form Test | NO UTM CODES`, function () {
         utmSecondaryTrue();
         utmOptInTrue();
         noUTMurlfilled();
+        requestedAtTrue();
     })
 });

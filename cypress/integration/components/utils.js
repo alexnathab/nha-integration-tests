@@ -15,7 +15,7 @@ export const getURL = (prefix, itinerary) => {
 }
 
 export const getNoUTMURL = (prefix, itinerary) => {
-    it(`Visits a trip specific url with UTM codes in the queries`, function () {
+    it(`Visits a trip specific url WITH NO UTM codes in the queries`, function () {
         //the following string is full of queries and thus is being used for testing
         cy.visit(`${prefix}nathab.com/africa/the-great-namibia-wildlife-safari/`);
     });
@@ -40,37 +40,52 @@ export const submitForm = (text) => {
     });
 }
 
-// export const checkValidity = (formID, formTarget) => {
-//     it(`Prompted with red outline in required fields`, function () {
-//         cy.get(formID).find(`#${formTarget}-first_name`).should('have.class', 'js-invalid');
-//         cy.get(formID).find(`#${formTarget}-last_name`).should('have.class', 'js-invalid');
-//         cy.get(formID).find(`#${formTarget}-email`).should('have.class', 'js-invalid');
-//         cy.log('Please fill out required fields before submitting request');
-//     });
-// }
-export const checkValidity = (formID) => {
+export const checkValidity = (formID, formTarget) => {
     it(`Prompted with red outline in required fields`, function () {
-        cy.get(formID).find(`#first_name`).should('have.class', 'js-invalid');
-        cy.get(formID).find(`#last_name`).should('have.class', 'js-invalid');
-        cy.get(formID).find(`#email`).should('have.class', 'js-invalid');
+        cy.get(formID).find(`#${formTarget}-first_name`).should('have.class', 'js-invalid');
+        cy.get(formID).find(`#${formTarget}-last_name`).should('have.class', 'js-invalid');
+        cy.get(formID).find(`#${formTarget}-email`).should('have.class', 'js-invalid');
         cy.log('Please fill out required fields before submitting request');
     });
 }
+// export const checkValidity = (formID) => {
+//     it(`Prompted with red outline in required fields`, function () {
+//         cy.get(formID).find(`#first_name`).should('have.class', 'js-invalid');
+//         cy.get(formID).find(`#last_name`).should('have.class', 'js-invalid');
+//         cy.get(formID).find(`#email`).should('have.class', 'js-invalid');
+//         cy.log('Please fill out required fields before submitting request');
+//     });
+// }
 
-export const requiredInfo = (formID) => {
-    it('Fills in required forms', function () {
-        cy.get(formID).find(`#first_name`).type('https://dev-Test');
-        cy.get(formID).find(`#last_name`).type('https://dev-Test');
-        cy.get(formID).find(`#email`).type('test@solocreative.com');
-    })
-};
-// export const requiredInfo = (formID, formTarget) => {
+// export const requiredInfo = (formID) => {
 //     it('Fills in required forms', function () {
-//         cy.get(formID).find(`#${formTarget}-first_name`).type('https://dev-Test');
-//         cy.get(formID).find(`#${formTarget}-last_name`).type('https://dev-Test');
-//         cy.get(formID).find(`#${formTarget}-email`).type('test@solocreative.com');
+//         cy.get(formID).find(`#first_name`).type('https://dev-Test');
+//         cy.get(formID).find(`#last_name`).type('https://dev-Test');
+//         cy.get(formID).find(`#email`).type('test@solocreative.com');
 //     })
 // };
+
+export const requiredInfo = (formID, formTarget) => {
+    it('Fills in required form fields', function () {
+        cy.get(formID).find(`#${formTarget}-first_name`).type('ALEXANDRA-Test');
+        cy.get(formID).find(`#${formTarget}-last_name`).type('ALEXANDRA-Test');
+        cy.get(formID).find(`#${formTarget}-email`).type('test@test.com');
+    })
+};
+
+export const optionalPersonalInfo = (formID, formTarget) => {
+    it('Fills the optional form field info', function () {
+        cy.get(formID).find(`#${formTarget}-company_name`).type('Natural Habitat Adventures');
+        cy.get(formID).find(`#${formTarget}-pdfRequestHomeStreet2`).type('Suite 180');
+        cy.get(formID).find(`#${formTarget}-informationRequestPhone`).type('+1 800 728 2718');
+    })
+}
+
+export const requiredInfoCat = (formId) => {
+    it('Fills in catalog specific required form fields', function () {
+
+    })
+}
 
 export const utmPersonalInfoTrue = () => {
     it('Makes sure that personal information fields in UTM form ARE filled in', function () {
@@ -79,6 +94,15 @@ export const utmPersonalInfoTrue = () => {
         cy.get('[ctest=utm_form]').find('#Email').should('not.have.value', '');
     })
 }
+
+export const personalInfoOptional = () => {
+    it('Makes sure that if optional fields are filled out, that the information is copied over', function () {
+        cy.get('[ctest=utm_form]').find('#Company').should('not.have.value', '');
+        cy.get('[ctest=utm_form]').find('#addressLine2').should('not.have.value', '');
+        cy.get('[ctest=utm_form]').find('#Phone').should('not.have.value', '');
+    })
+}
+
 export const utmPersonalInfoFalse = () => {
     it('Makes sure that personal information fields in UTM form ARE NOT filled in', function () {
         cy.get('[ctest=utm_form]').find('#FirstName').should('have.value', '');
@@ -116,6 +140,13 @@ export const utmValueTrue = () => {
         cy.get('[ctest=utm_form]').find('#utmterm').should('not.have.value', '');
         // cy.get('[ctest=utm_form]').find('#recentConversionAction').should('not.have.value', '');
     });
+}
+
+export const requestedAtTrue = () => {
+    it('Makes sure the form is capturing reference information', function () {
+        cy.get('[ctest=utm_form]').find('#requestedAt').should('not.have.value', '');
+        cy.get('[ctest=utm_form]').find('#referringWebsite').should('not.have.value', '');
+    })
 }
 
 export const recentConversionAction = () => {
@@ -234,15 +265,114 @@ export const checkbox = (formID, checkbox) => {
     })
 }
 
-export const shipInfo = (formID, formTarget) => {
-    it('fills in catalog shipping info', function () {
-        cy.get(formID).find(`#pdfRequestHomeStreet`).type('TEST');
-        cy.get(formID).find(`#pdfRequestHomeCity`).type('TEST');
-        cy.get(formID).find(`#pdfRequestHomeState`).select('Colorado');
-        cy.get(formID).find(`#pdfRequestHomeZIP`).type('00000');
-        cy.get(formID).find(`#pdfRequestHomeCountry`).select('Albania');
+export const catalogOptionalDesktop = (formID, formTarget) => {
+    it('Fills out optional fields in the catalog form', function () {
+        //destination interest
+        cy.get(formID).find(`#${formTarget}-destination-africa`).check();
+        cy.get(formID).find(`#${formTarget}-destination-northern`).check();
+        cy.get(formID).find(`#${formTarget}-destination-asia-pacific`).check();
+        //travel type interests 
+        cy.get(formID).find(`#${formTarget}-interest-family`).check();
+        cy.get(formID).find(`#${formTarget}-interest-custom`).check();
+        //travel experience
+        cy.get(formID).find(`#${formTarget}-previously-traveled-africa`).check();
+        cy.get(formID).find(`#${formTarget}-previously-traveled-galapagos`).check();
+        cy.get(formID).find(`#${formTarget}-previously-traveled-europe`).check();
+        //specific trip or itinerary
+        cy.get(formID).find(`#${formTarget}-itinRequest`).type('East Greenland Kayaking');
+        //season/year for desired travel
+        cy.get(formID).find(`#${formTarget}-seasonYearInfo`).type('Summer or Fall 2021');
+        //party size
+        cy.get(formID).find(`#${formTarget}-party-size`).type('10');
+        //per person budget
+        cy.get(formID).find(`#${formTarget}-trip-budget`).select('$2500-$3500');
+        //travel frequency
+        cy.get(formID).find(`#${formTarget}-travel-frequency-seldom`).check();
+        //reference type 
+        cy.get(formID).find(`#${formTarget}-find-nathab`).select('Travel Consultant');
+        //reference name 
+        cy.get(formID).find(`#${formTarget}-friend-referral`).type('Carole Smith');
     })
 }
+
+export const catalogOptionalMobile = (formID, formTarget) => {
+    it('Fills out optional fields in the catalog form', function () {
+        //destination interest
+        cy.get(formID).find(`#${formTarget}-destination-africa`).check();
+        cy.get(formID).find(`#${formTarget}-destination-northern`).check();
+        cy.get(formID).find(`#${formTarget}-destination-asia-pacific`).check();
+        //travel type interests 
+        cy.get(formID).find(`#${formTarget}-interest-family`).check();
+        cy.get(formID).find(`#${formTarget}-interest-custom`).check();
+        //travel experience
+        cy.get(formID).find(`#${formTarget}-previously-traveled-africa`).check();
+        cy.get(formID).find(`#${formTarget}-previously-traveled-galapagos`).check();
+        cy.get(formID).find(`#${formTarget}-previously-traveled-europe`).check();
+        //specific trip or itinerary
+        cy.get(formID).find(`#${formTarget}-itinRequest`).type('East Greenland Kayaking');
+        //season/year for desired travel
+        cy.get(formID).find(`#${formTarget}-seasonYearInfo`).type('Summer or Fall 2021');
+        //party size
+        cy.get(formID).find(`#${formTarget}-party-size`).type('10');
+        //per person budget
+        cy.get(formID).find(`#${formTarget}-trip-budget`).select('$2500-$3500');
+        //reference type 
+        cy.get(formID).find(`#${formTarget}-find-nathab`).select('Travel Consultant');
+        //reference name 
+        cy.get(formID).find(`#${formTarget}-friend-referral`).type('Carole Smith');
+    })
+}
+
+export const catalogOptionalMarketoDesktop = () => {
+    it('Checks to make sure that optional catalog information got copied to the marketo form', function () {
+        cy.get('[ctest=utm_form]').find('#interestinAfrica').should('be.checked');
+        cy.get('[ctest=utm_form]').find('#interestinAlaskaNorth').should('be.checked');
+        cy.get('[ctest=utm_form]').find('#interestinAsiaPacific').should('be.checked');
+        cy.get('[ctest=utm_form]').find('#interestinFamily').should('be.checked');
+        cy.get('[ctest=utm_form]').find('#interestinCustom').should('be.checked');
+        cy.get('[ctest=utm_form]').find('#mktoCheckbox_18145_0').should('be.checked');
+        cy.get('[ctest=utm_form]').find('#mktoCheckbox_18145_6').should('be.checked');
+        cy.get('[ctest=utm_form]').find('#mktoCheckbox_18145_8').should('be.checked');
+        cy.get('[ctest=utm_form]').find('#temp13CatTripSpecifics').should('not.have.value', '');
+        cy.get('[ctest=utm_form]').find('#temp12CatAvailability').should('not.have.value', '');
+        cy.get('[ctest=utm_form]').find('#temp10CatPartySize').should('not.have.value', '');
+        cy.get('[ctest=utm_form]').find('#temp11CatBudget').should('not.have.value', '');
+
+        cy.get('[ctest=utm_form]').find('#temp15CatTravelFrequency').should('not.have.value', '');
+
+        cy.get('[ctest=utm_form]').find('#temp8CatReferralSource').should('not.have.value', '');
+        cy.get('[ctest=utm_form]').find('#temp9CatReferralName').should('not.have.value', '');
+    })
+}
+
+export const catalogOptionalMarketoMobile = () => {
+    it('Checks to make sure that optional catalog information got copied to the marketo form', function () {
+        cy.get('[ctest=utm_form]').find('#interestinAfrica').should('be.checked');
+        cy.get('[ctest=utm_form]').find('#interestinAlaskaNorth').should('be.checked');
+        cy.get('[ctest=utm_form]').find('#interestinAsiaPacific').should('be.checked');
+        cy.get('[ctest=utm_form]').find('#interestinFamily').should('be.checked');
+        cy.get('[ctest=utm_form]').find('#interestinCustom').should('be.checked');
+        cy.get('[ctest=utm_form]').find('#mktoCheckbox_18145_0').should('be.checked');
+        cy.get('[ctest=utm_form]').find('#mktoCheckbox_18145_6').should('be.checked');
+        cy.get('[ctest=utm_form]').find('#mktoCheckbox_18145_8').should('be.checked');
+        cy.get('[ctest=utm_form]').find('#temp13CatTripSpecifics').should('not.have.value', '');
+        cy.get('[ctest=utm_form]').find('#temp12CatAvailability').should('not.have.value', '');
+        cy.get('[ctest=utm_form]').find('#temp10CatPartySize').should('not.have.value', '');
+        cy.get('[ctest=utm_form]').find('#temp11CatBudget').should('not.have.value', '');
+        cy.get('[ctest=utm_form]').find('#temp8CatReferralSource').should('not.have.value', '');
+        cy.get('[ctest=utm_form]').find('#temp9CatReferralName').should('not.have.value', '');
+    })
+}
+
+// export const shipInfo = (formID, formTarget) => {
+//     it('fills in catalog shipping info', function () {
+//         cy.get(formID).find(`#pdfRequestHomeStreet`).type('TEST');
+//         cy.get(formID).find(`#pdfRequestHomeCity`).type('TEST');
+//         cy.get(formID).find(`#pdfRequestHomeState`).select('Colorado');
+//         cy.get(formID).find(`#pdfRequestHomeZIP`).type('00000');
+//         cy.get(formID).find(`#pdfRequestHomeCountry`).select('Albania');
+//     })
+// }
 // export const shipInfo = (formID, formTarget) => {
 //     it('fills in catalog shipping info', function () {
 //         cy.get(formID).find(`#pdfRequestHomeStreet`).type('TEST');
@@ -252,12 +382,12 @@ export const shipInfo = (formID, formTarget) => {
 //         cy.get(formID).find(`#pdfRequestHomeCountry`).type('Albania');
 //     })
 // }
-// export const shipInfo = (formID, formTarget) => {
-//     it('fills in catalog shipping info', function () {
-//         cy.get(formID).find(`#${formTarget}-pdfRequestHomeStreet`).type('TEST');
-//         cy.get(formID).find(`#${formTarget}-pdfRequestHomeCity`).type('TEST');
-//         cy.get(formID).find(`#${formTarget}-pdfRequestHomeState`).type('Colorado');
-//         cy.get(formID).find(`#${formTarget}-pdfRequestHomeZIP`).type('00000');
-//         cy.get(formID).find(`#${formTarget}-pdfRequestHomeCountry`).type('Albania');
-//     })
-// }
+export const shipInfo = (formID, formTarget) => {
+    it('fills in catalog shipping info', function () {
+        cy.get(formID).find(`#${formTarget}-pdfRequestHomeStreet`).type('TEST');
+        cy.get(formID).find(`#${formTarget}-pdfRequestHomeCity`).type('TEST');
+        cy.get(formID).find(`#${formTarget}-pdfRequestHomeState`).type('Colorado');
+        cy.get(formID).find(`#${formTarget}-pdfRequestHomeZIP`).type('00000');
+        cy.get(formID).find(`#${formTarget}-pdfRequestHomeCountry`).type('Albania');
+    })
+}
