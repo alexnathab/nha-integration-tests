@@ -134,7 +134,7 @@ describe(`Ask Form Test - nothing checked | INCLUDES UTM CODES`, function () {
         checkValidity('#form-ask', 'form-ask');
         //Secret Marketo Form Check
         requiredInfo('#form-ask', 'form-ask')
-        uncheckBox('#form-ask', '#requestNewsletter');
+        uncheckBox('#form-ask', '#form-ask-requestNewsletter');
         submitForm('#form-ask-submit');
         //NEXT PUSH CHANGE BELOW
         utmPersonalInfoTrue();
@@ -163,7 +163,7 @@ describe(`Ask Form Test - nothing checked | INCLUDES UTM CODES`, function () {
         submitForm('#form-ask-submit-mobile');
         checkValidity('#form-ask-mobile', 'form-ask-mobile');
         requiredInfo('#form-ask-mobile', 'form-ask-mobile')
-        uncheckBox('#form-ask-mobile', '#requestNewsletter');
+        uncheckBox('#form-ask-mobile', '#form-ask-mobile-requestNewsletter');
         submitForm('#form-ask-submit-mobile');
         utmPersonalInfoTrue();
         utmSecondaryFalse();
@@ -186,7 +186,7 @@ describe(`Ask Form Test - nothing checked | NO UTM CODES`, function () {
         checkValidity('#form-ask', 'form-ask');
         //Secret Marketo Form Check
         requiredInfo('#form-ask', 'form-ask')
-        uncheckBox('#form-ask', '#requestNewsletter');
+        uncheckBox('#form-ask', '#form-ask-requestNewsletter');
         submitForm('#form-ask-submit');
         utmPersonalInfoTrue();
         // utmPersonalInfoFalse();
@@ -213,7 +213,7 @@ describe(`Ask Form Test - nothing checked | NO UTM CODES`, function () {
         submitForm('#form-ask-submit-mobile');
         checkValidity('#form-ask-mobile', 'form-ask-mobile');
         requiredInfo('#form-ask-mobile', 'form-ask-mobile')
-        uncheckBox('#form-ask-mobile', '#requestNewsletter');
+        uncheckBox('#form-ask-mobile', '#form-ask-mobile-requestNewsletter');
         submitForm('#form-ask-submit-mobile');
         utmPersonalInfoTrue();
         utmSecondaryFalse();

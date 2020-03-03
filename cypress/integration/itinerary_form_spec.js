@@ -80,7 +80,7 @@ describe(`Itinerary Pop Up Form Test - Catalog checked | INCLUDES UTM CODES`, fu
     submitForm('#form-itinerary-submit');
     checkValidity('#form-itinerary', 'form-itinerary');
     requiredInfo('#form-itinerary', 'form-itinerary');
-    checkbox('#form-itinerary', '#requestCatalog');
+    checkbox('#form-itinerary', '#form-itinerary-requestCatalog');
     shipInfo('#form-itinerary', 'form-itinerary');
     submitForm('#form-itinerary-submit');
     utmPersonalInfoTrue();
@@ -102,7 +102,7 @@ describe(`Itinerary Pop Up Form Test - Catalog checked | NO UTM CODES`, function
     submitForm('#form-itinerary-submit');
     checkValidity('#form-itinerary', 'form-itinerary');
     requiredInfo('#form-itinerary', 'form-itinerary');
-    checkbox('#form-itinerary', '#requestCatalog');
+    checkbox('#form-itinerary', '#form-itinerary-requestCatalog');
     shipInfo('#form-itinerary', 'form-itinerary');
     submitForm('#form-itinerary-submit');
     utmPersonalInfoTrue();

@@ -180,7 +180,7 @@ describe(`Catalog Form Test | INCLUDES UTM CODES | eNEWS NOT CHECKED`, function 
         requiredInfo('#form-catalog', 'form-catalog');
         optionalPersonalInfo('#form-catalog', 'form-catalog')
         shipInfo('#form-catalog', 'form-catalog');
-        uncheckBox('#form-catalog', '#requestNewsletter')
+        uncheckBox('#form-catalog', '#form-catalog-requestNewsletter')
         submitForm('#form-catalog-submit');
 
         //CHECK MARKETO FORM FOR INTIAL INFORMATION
@@ -219,7 +219,7 @@ describe(`Catalog Form Test | INCLUDES UTM CODES | eNEWS NOT CHECKED`, function 
         requiredInfo('#form-catalog-mobile', 'form-catalog-mobile');
         optionalPersonalInfo('#form-catalog-mobile', 'form-catalog-mobile')
         shipInfo('#form-catalog-mobile', 'form-catalog-mobile');
-        uncheckBox('#form-catalog-mobile', '#requestNewsletter')
+        uncheckBox('#form-catalog-mobile', '#form-catalog-mobile-requestNewsletter')
         submitForm('#form-catalog-submit-mobile');
         //CHECK MARKETO FORM FOR INTIAL INFORMATION
         utmPersonalInfoTrue();
@@ -256,7 +256,7 @@ describe(`Catalog Form Test | DOES NOT INCLUDE UTM CODES | eNEWS NOT CHECKED`, f
         requiredInfo('#form-catalog', 'form-catalog');
         optionalPersonalInfo('#form-catalog', 'form-catalog')
         shipInfo('#form-catalog', 'form-catalog');
-        uncheckBox('#form-catalog', '#requestNewsletter')
+        uncheckBox('#form-catalog', '#form-catalog-requestNewsletter')
         submitForm('#form-catalog-submit');
 
         //CHECK MARKETO FORM FOR INTIAL INFORMATION
@@ -295,7 +295,7 @@ describe(`Catalog Form Test | DOES NOT INCLUDE UTM CODES | eNEWS NOT CHECKED`, f
         requiredInfo('#form-catalog-mobile', 'form-catalog-mobile');
         optionalPersonalInfo('#form-catalog-mobile', 'form-catalog-mobile')
         shipInfo('#form-catalog-mobile', 'form-catalog-mobile');
-        uncheckBox('#form-catalog-mobile', '#requestNewsletter')
+        uncheckBox('#form-catalog-mobile', '#form-catalog-mobile-requestNewsletter')
         submitForm('#form-catalog-submit-mobile');
         //CHECK MARKETO FORM FOR INTIAL INFORMATION
         utmPersonalInfoTrue();

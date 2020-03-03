@@ -32,7 +32,7 @@ describe(`PDF Form Test - Nothing Checked | INCLUDES UTM CODES`, function () {
         submitForm('#form-pdf-submit');
         checkValidity('#form-pdf', 'form-pdf');
         requiredInfo('#form-pdf', 'form-pdf');
-        uncheckBox('#form-pdf', '#requestNewsletter');
+        uncheckBox('#form-pdf', '#form-pdf-requestNewsletter');
         submitForm('#form-pdf-submit');
         utmPersonalInfoTrue();
         utmSecondaryTrue();
@@ -55,7 +55,7 @@ describe(`PDF Form Test - Nothing Checked | INCLUDES UTM CODES`, function () {
         submitForm('#form-pdf-submit-mobile');
         checkValidity('#form-pdf-mobile', 'form-pdf-mobile');
         requiredInfo('#form-pdf-mobile', 'form-pdf-mobile');
-        uncheckBox('#form-pdf-mobile', '#requestNewsletter');
+        uncheckBox('#form-pdf-mobile', '#form-pdf-mobile-requestNewsletter');
         submitForm('#form-pdf-submit-mobile');
         utmPersonalInfoTrue();
         utmSecondaryTrue();
@@ -75,7 +75,7 @@ describe(`PDF Form Test - Nothing Checked | NO UTM CODES`, function () {
         submitForm('#form-pdf-submit');
         checkValidity('#form-pdf', 'form-pdf');
         requiredInfo('#form-pdf', 'form-pdf');
-        uncheckBox('#form-pdf', '#requestNewsletter');
+        uncheckBox('#form-pdf', '#form-pdf-requestNewsletter');
         submitForm('#form-pdf-submit');
         utmPersonalInfoTrue();
         utmSecondaryTrue();
@@ -98,7 +98,7 @@ describe(`PDF Form Test - Nothing Checked | NO UTM CODES`, function () {
         submitForm('#form-pdf-submit-mobile');
         checkValidity('#form-pdf-mobile', 'form-pdf-mobile');
         requiredInfo('#form-pdf-mobile', 'form-pdf-mobile');
-        uncheckBox('#form-pdf-mobile', '#requestNewsletter');
+        uncheckBox('#form-pdf-mobile', '#form-pdf-mobile-requestNewsletter');
         submitForm('#form-pdf-submit-mobile');
         utmPersonalInfoTrue();
         utmSecondaryTrue();
@@ -205,8 +205,8 @@ describe(`PDF Form Test - Catalog Checked | INCLUDES UTM CODES`, function () {
         submitForm('#form-pdf-submit');
         checkValidity('#form-pdf', 'form-pdf');
         requiredInfo('#form-pdf', 'form-pdf');
-        uncheckBox('#form-pdf', '#requestNewsletter');
-        checkbox('#form-pdf', '#requestCatalog');
+        uncheckBox('#form-pdf', '#form-pdf-requestNewsletter');
+        checkbox('#form-pdf', '#form-pdf-requestCatalog');
         shipInfo('#form-pdf', 'form-pdf');
         submitForm('#form-pdf-submit');
         utmPersonalInfoTrue();
@@ -231,8 +231,8 @@ describe(`PDF Form Test - Catalog Checked | INCLUDES UTM CODES`, function () {
         submitForm('#form-pdf-submit-mobile');
         checkValidity('#form-pdf-mobile', 'form-pdf-mobile');
         requiredInfo('#form-pdf-mobile', 'form-pdf-mobile');
-        uncheckBox('#form-pdf-mobile', '#requestNewsletter');
-        checkbox('#form-pdf-mobile', '#requestCatalog');
+        uncheckBox('#form-pdf-mobile', '#form-pdf-mobile-requestNewsletter');
+        checkbox('#form-pdf-mobile', '#form-pdf-mobile-requestCatalog');
         shipInfo('#form-pdf-mobile', 'form-pdf-mobile');
         submitForm('#form-pdf-submit-mobile');
         utmPersonalInfoTrue();
@@ -253,8 +253,8 @@ describe(`PDF Form Test - Catalog Checked | NO UTM CODES`, function () {
         submitForm('#form-pdf-submit');
         checkValidity('#form-pdf', 'form-pdf');
         requiredInfo('#form-pdf', 'form-pdf');
-        uncheckBox('#form-pdf', '#requestNewsletter');
-        checkbox('#form-pdf', '#requestCatalog');
+        uncheckBox('#form-pdf', '#form-pdf-requestNewsletter');
+        checkbox('#form-pdf', '#form-pdf-requestCatalog');
         shipInfo('#form-pdf', 'form-pdf');
         submitForm('#form-pdf-submit');
         utmPersonalInfoTrue();
@@ -278,8 +278,8 @@ describe(`PDF Form Test - Catalog Checked | NO UTM CODES`, function () {
         submitForm('#form-pdf-submit-mobile');
         checkValidity('#form-pdf-mobile', 'form-pdf-mobile');
         requiredInfo('#form-pdf-mobile', 'form-pdf-mobile');
-        uncheckBox('#form-pdf-mobile', '#requestNewsletter');
-        checkbox('#form-pdf-mobile', '#requestCatalog');
+        uncheckBox('#form-pdf-mobile', '#form-pdf-mobile-requestNewsletter');
+        checkbox('#form-pdf-mobile', '#form-pdf-mobile-requestCatalog');
         shipInfo('#form-pdf-mobile', 'form-pdf-mobile');
         submitForm('#form-pdf-submit-mobile');
         utmPersonalInfoTrue();
@@ -302,7 +302,7 @@ describe(`PDF Form Test - Catalog & eNews Checked | INCLUDES UTM CODES`, functio
         submitForm('#form-pdf-submit');
         checkValidity('#form-pdf', 'form-pdf');
         requiredInfo('#form-pdf', 'form-pdf');
-        checkbox('#form-pdf', '#requestCatalog');
+        checkbox('#form-pdf', '#form-pdf-requestCatalog');
         shipInfo('#form-pdf', 'form-pdf');
         submitForm('#form-pdf-submit');
         utmPersonalInfoTrue();
@@ -326,7 +326,7 @@ describe(`PDF Form Test - Catalog & eNews Checked | INCLUDES UTM CODES`, functio
         submitForm('#form-pdf-submit-mobile');
         checkValidity('#form-pdf-mobile', 'form-pdf-mobile');
         requiredInfo('#form-pdf-mobile', 'form-pdf-mobile');
-        checkbox('#form-pdf-mobile', '#requestCatalog');
+        checkbox('#form-pdf-mobile', '#form-pdf-mobile-requestCatalog');
         shipInfo('#form-pdf-mobile', 'form-pdf-mobile');
         submitForm('#form-pdf-submit-mobile');
         utmPersonalInfoTrue();
@@ -348,7 +348,7 @@ describe(`PDF Form Test - Catalog & eNews Checked | NO UTM CODES`, function () {
         submitForm('#form-pdf-submit');
         checkValidity('#form-pdf', 'form-pdf');
         requiredInfo('#form-pdf', 'form-pdf');
-        checkbox('#form-pdf', '#requestCatalog');
+        checkbox('#form-pdf', '#form-pdf-requestCatalog');
         shipInfo('#form-pdf', 'form-pdf');
         submitForm('#form-pdf-submit');
         utmPersonalInfoTrue();
@@ -372,7 +372,7 @@ describe(`PDF Form Test - Catalog & eNews Checked | NO UTM CODES`, function () {
         submitForm('#form-pdf-submit-mobile');
         checkValidity('#form-pdf-mobile', 'form-pdf-mobile');
         requiredInfo('#form-pdf-mobile', 'form-pdf-mobile');
-        checkbox('#form-pdf-mobile', '#requestCatalog');
+        checkbox('#form-pdf-mobile', '#form-pdf-mobile-requestCatalog');
         shipInfo('#form-pdf-mobile', 'form-pdf-mobile');
         submitForm('#form-pdf-submit-mobile');
         utmPersonalInfoTrue();
