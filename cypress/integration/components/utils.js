@@ -272,8 +272,8 @@ export const catalogOptionalDesktop = (formID, formTarget) => {
         cy.get(formID).find(`#${formTarget}-destination-northern`).check();
         cy.get(formID).find(`#${formTarget}-destination-asia-pacific`).check();
         //travel type interests 
-        cy.get(formID).find(`#${formTarget}-interest-family`).check();
-        cy.get(formID).find(`#${formTarget}-interest-custom`).check();
+        // cy.get(formID).find(`#${formTarget}-interest-family`).check();
+        // cy.get(formID).find(`#${formTarget}-interest-custom`).check();
         //travel experience
         cy.get(formID).find(`#${formTarget}-previously-traveled-africa`).check();
         cy.get(formID).find(`#${formTarget}-previously-traveled-galapagos`).check();
@@ -302,8 +302,8 @@ export const catalogOptionalMobile = (formID, formTarget) => {
         cy.get(formID).find(`#${formTarget}-destination-northern`).check();
         cy.get(formID).find(`#${formTarget}-destination-asia-pacific`).check();
         //travel type interests 
-        cy.get(formID).find(`#${formTarget}-interest-family`).check();
-        cy.get(formID).find(`#${formTarget}-interest-custom`).check();
+        // cy.get(formID).find(`#${formTarget}-interest-family`).check();
+        // cy.get(formID).find(`#${formTarget}-interest-custom`).check();
         //travel experience
         cy.get(formID).find(`#${formTarget}-previously-traveled-africa`).check();
         cy.get(formID).find(`#${formTarget}-previously-traveled-galapagos`).check();
@@ -328,11 +328,13 @@ export const catalogOptionalMarketoDesktop = () => {
         cy.get('[ctest=utm_form]').find('#interestinAfrica').should('be.checked');
         cy.get('[ctest=utm_form]').find('#interestinAlaskaNorth').should('be.checked');
         cy.get('[ctest=utm_form]').find('#interestinAsiaPacific').should('be.checked');
-        cy.get('[ctest=utm_form]').find('#interestinFamily').should('be.checked');
-        cy.get('[ctest=utm_form]').find('#interestinCustom').should('be.checked');
-        cy.get('[ctest=utm_form]').find('#mktoCheckbox_18145_0').should('be.checked');
-        cy.get('[ctest=utm_form]').find('#mktoCheckbox_18145_6').should('be.checked');
-        cy.get('[ctest=utm_form]').find('#mktoCheckbox_18145_8').should('be.checked');
+        // cy.get('[ctest=utm_form]').find('#interestinFamily').should('be.checked');
+        // cy.get('[ctest=utm_form]').find('#interestinCustom').should('be.checked');
+        // cy.get('[ctest=utm_form]').find('#mktoCheckbox_18145_6').should('be.checked');
+        cy.get('[ctest=utm_form]').find('[name="temp14CatPreviousTravel"][value="Africa"]').should('be.checked');
+        cy.get('[ctest=utm_form]').find('[name="temp14CatPreviousTravel"][value="Galapagos"]').should('be.checked');
+        cy.get('[ctest=utm_form]').find('[name="temp14CatPreviousTravel"][value="Europe"]').should('be.checked');
+        // cy.get('[ctest=utm_form]').find('#mktoCheckbox_18145_8').should('be.checked');
         cy.get('[ctest=utm_form]').find('#temp13CatTripSpecifics').should('not.have.value', '');
         cy.get('[ctest=utm_form]').find('#temp12CatAvailability').should('not.have.value', '');
         cy.get('[ctest=utm_form]').find('#temp10CatPartySize').should('not.have.value', '');
@@ -350,11 +352,14 @@ export const catalogOptionalMarketoMobile = () => {
         cy.get('[ctest=utm_form]').find('#interestinAfrica').should('be.checked');
         cy.get('[ctest=utm_form]').find('#interestinAlaskaNorth').should('be.checked');
         cy.get('[ctest=utm_form]').find('#interestinAsiaPacific').should('be.checked');
-        cy.get('[ctest=utm_form]').find('#interestinFamily').should('be.checked');
-        cy.get('[ctest=utm_form]').find('#interestinCustom').should('be.checked');
-        cy.get('[ctest=utm_form]').find('#mktoCheckbox_18145_0').should('be.checked');
-        cy.get('[ctest=utm_form]').find('#mktoCheckbox_18145_6').should('be.checked');
-        cy.get('[ctest=utm_form]').find('#mktoCheckbox_18145_8').should('be.checked');
+        // cy.get('[ctest=utm_form]').find('#interestinFamily').should('be.checked');
+        // cy.get('[ctest=utm_form]').find('#interestinCustom').should('be.checked');
+        // cy.get('[ctest=utm_form]').find('#mktoCheckbox_18145_0').should('be.checked');
+        // cy.get('[ctest=utm_form]').find('#mktoCheckbox_18145_6').should('be.checked');
+        // cy.get('[ctest=utm_form]').find('#mktoCheckbox_18145_8').should('be.checked');
+        cy.get('[ctest=utm_form]').find('[name="temp14CatPreviousTravel"][value="Africa"]').should('be.checked');
+        cy.get('[ctest=utm_form]').find('[name="temp14CatPreviousTravel"][value="Galapagos"]').should('be.checked');
+        cy.get('[ctest=utm_form]').find('[name="temp14CatPreviousTravel"][value="Europe"]').should('be.checked');
         cy.get('[ctest=utm_form]').find('#temp13CatTripSpecifics').should('not.have.value', '');
         cy.get('[ctest=utm_form]').find('#temp12CatAvailability').should('not.have.value', '');
         cy.get('[ctest=utm_form]').find('#temp10CatPartySize').should('not.have.value', '');
@@ -364,6 +369,14 @@ export const catalogOptionalMarketoMobile = () => {
     })
 }
 
+export const catalogJoinInfo = () => {
+    it('Makes sure that the information that ties the two forms together is present', function () {
+        cy.get('[ctest=utm_form]').find('#uniqueVisitorID').should('not.have.value', '');
+        cy.get('[ctest=utm_form]').find('#uniqueVisitorID').should('not.have.value', '');
+        cy.get('[ctest=utm_form]').find('#Email').should('not.have.value', '');
+    });
+
+}
 // export const shipInfo = (formID, formTarget) => {
 //     it('fills in catalog shipping info', function () {
 //         cy.get(formID).find(`#pdfRequestHomeStreet`).type('TEST');

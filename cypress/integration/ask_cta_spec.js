@@ -35,48 +35,48 @@ var cta_buttons = {
 
 // TEST 1 eNewsletter CHECKED
 
-describe(`Ask Form Test - eNews checked | INCLUDES UTM CODES`, function () {
-    //Validity Check
-    context('desktop', function () {
-        getURL('https://dev.', '');
-        clickCTA('[ctest=ask_cta]');
-        checkVisibility('[ctest=ask_cta_lightbox]', '#form-ask');
-        submitForm('#form-ask-submit');
-        checkValidity('#form-ask', 'form-ask');
-        //Secret Marketo Form Check
-        requiredInfo('#form-ask', 'form-ask')
-        submitForm('#form-ask-submit');
-        utmPersonalInfoTrue();
-        utmSecondaryTrue();
-        catTempFalse();
-        utmOptInTrue();
-        utmValueTrue();
-        requestedAtTrue();
-        addressDataFalse();
-    });
-    context('mobile', function () {
-        beforeEach(function () {
-            cy.viewport('iphone-6')
-            cy.wait(2000);
-        })
-        getURL("https://dev.", '');
-        clickCTA("[tripnav-section='hamburger']");
-        clickCTA("[for='mobile-ask']");
-        checkVisibility('[ctest="ask-cta-card-mobile"]', '#form-ask-mobile');
-        submitForm('#form-ask-submit-mobile');
-        checkValidity('#form-ask-mobile', 'form-ask-mobile');
-        requiredInfo('#form-ask-mobile', 'form-ask-mobile')
-        submitForm('#form-ask-submit-mobile');
-        utmPersonalInfoTrue();
-        utmSecondaryTrue();
-        catTempFalse();
-        utmOptInTrue();
-        utmValueTrue();
-        requestedAtTrue();
-        addressDataFalse();
-    });
+// describe(`Ask Form Test - eNews checked | INCLUDES UTM CODES`, function () {
+//     //Validity Check
+//     context('desktop', function () {
+//         getURL('https://dev.', '');
+//         clickCTA('[ctest=ask_cta]');
+//         checkVisibility('[ctest=ask_cta_lightbox]', '#form-ask');
+//         submitForm('#form-ask-submit');
+//         checkValidity('#form-ask', 'form-ask');
+//         //Secret Marketo Form Check
+//         requiredInfo('#form-ask', 'form-ask')
+//         submitForm('#form-ask-submit');
+//         utmPersonalInfoTrue();
+//         utmSecondaryTrue();
+//         catTempFalse();
+//         utmOptInTrue();
+//         utmValueTrue();
+//         requestedAtTrue();
+//         addressDataFalse();
+//     });
+//     context('mobile', function () {
+//         beforeEach(function () {
+//             cy.viewport('iphone-6')
+//             cy.wait(2000);
+//         })
+//         getURL("https://dev.", '');
+//         clickCTA("[tripnav-section='hamburger']");
+//         clickCTA("[for='mobile-ask']");
+//         checkVisibility('[ctest="ask-cta-card-mobile"]', '#form-ask-mobile');
+//         submitForm('#form-ask-submit-mobile');
+//         checkValidity('#form-ask-mobile', 'form-ask-mobile');
+//         requiredInfo('#form-ask-mobile', 'form-ask-mobile')
+//         submitForm('#form-ask-submit-mobile');
+//         utmPersonalInfoTrue();
+//         utmSecondaryTrue();
+//         catTempFalse();
+//         utmOptInTrue();
+//         utmValueTrue();
+//         requestedAtTrue();
+//         addressDataFalse();
+//     });
 
-})
+// })
 
 describe(`Ask Form Test - eNews checked | NO UTM CODES`, function () {
     context('desktop', function () {
@@ -93,14 +93,14 @@ describe(`Ask Form Test - eNews checked | NO UTM CODES`, function () {
         utmSecondaryTrue();
         catTempFalse();
         utmOptInTrue();
-        noUTMurlfilled();
+        // noUTMurlfilled();
         requestedAtTrue();
-        addressDataFalse();
+        // addressDataFalse();
     });
     context('mobile', function () {
         beforeEach(function () {
             cy.viewport('iphone-6')
-            cy.wait(2000);
+            cy.wait(200);
         })
         getNoUTMURL('https://dev.');
         clickCTA("[tripnav-section='hamburger']");
@@ -114,9 +114,9 @@ describe(`Ask Form Test - eNews checked | NO UTM CODES`, function () {
         utmSecondaryTrue();
         catTempFalse();
         utmOptInTrue();
-        noUTMurlfilled();
+        // noUTMurlfilled();
         requestedAtTrue();
-        addressDataFalse();
+        // addressDataFalse();
     });
 })
 
@@ -124,58 +124,58 @@ describe(`Ask Form Test - eNews checked | NO UTM CODES`, function () {
 // TRIPLE CHECK WITH MEGAN--should personal data be sent to Marketo as of now because we are forgetting
 // about forms.nathab ? ? ?
 
-describe(`Ask Form Test - nothing checked | INCLUDES UTM CODES`, function () {
-    context('desktop', function () {
-        //Validity Check
-        getURL("https://dev.", '');
-        clickCTA(`[ctest=ask_cta]`);
-        checkVisibility('[ctest=ask_cta_lightbox]', '#form-ask');
-        submitForm('#form-ask-submit');
-        checkValidity('#form-ask', 'form-ask');
-        //Secret Marketo Form Check
-        requiredInfo('#form-ask', 'form-ask')
-        uncheckBox('#form-ask', '#form-ask-requestNewsletter');
-        submitForm('#form-ask-submit');
-        //NEXT PUSH CHANGE BELOW
-        utmPersonalInfoTrue();
-        // utmPersonalInfoFalse();
-        utmSecondaryFalse();
-        // sourceDetail();
-        // leadSourceFalse()
-        catTempFalse();
-        utmOptInFalse();
-        // utmValueTrue();
-        utmValueTrue();
-        // recentConversionAction();
-        requestedAtTrue();
-        recentConversionActionFalse();
-        addressDataFalse();
-    });
-    context('mobile', function () {
-        beforeEach(function () {
-            cy.viewport('iphone-6')
-            cy.wait(2000);
-        })
-        getURL("https://dev.", '');
-        clickCTA("[tripnav-section='hamburger']");
-        clickCTA("[for='mobile-ask']");
-        checkVisibility('[ctest="ask-cta-card-mobile"]', '#form-ask-mobile');
-        submitForm('#form-ask-submit-mobile');
-        checkValidity('#form-ask-mobile', 'form-ask-mobile');
-        requiredInfo('#form-ask-mobile', 'form-ask-mobile')
-        uncheckBox('#form-ask-mobile', '#form-ask-mobile-requestNewsletter');
-        submitForm('#form-ask-submit-mobile');
-        utmPersonalInfoTrue();
-        utmSecondaryFalse();
-        // leadSourceFalse();
-        // sourceDetail();
-        catTempFalse();
-        utmOptInFalse();
-        utmValueTrue();
-        requestedAtTrue();
-        addressDataFalse();
-    });
-})
+// describe(`Ask Form Test - nothing checked | INCLUDES UTM CODES`, function () {
+//     context('desktop', function () {
+//         //Validity Check
+//         getURL("https://dev.", '');
+//         clickCTA(`[ctest=ask_cta]`);
+//         checkVisibility('[ctest=ask_cta_lightbox]', '#form-ask');
+//         submitForm('#form-ask-submit');
+//         checkValidity('#form-ask', 'form-ask');
+//         //Secret Marketo Form Check
+//         requiredInfo('#form-ask', 'form-ask')
+//         uncheckBox('#form-ask', '#form-ask-requestNewsletter');
+//         submitForm('#form-ask-submit');
+//         //NEXT PUSH CHANGE BELOW
+//         utmPersonalInfoTrue();
+//         // utmPersonalInfoFalse();
+//         utmSecondaryFalse();
+//         // sourceDetail();
+//         // leadSourceFalse()
+//         catTempFalse();
+//         utmOptInFalse();
+//         // utmValueTrue();
+//         utmValueTrue();
+//         // recentConversionAction();
+//         requestedAtTrue();
+//         recentConversionActionFalse();
+//         addressDataFalse();
+//     });
+//     context('mobile', function () {
+//         beforeEach(function () {
+//             cy.viewport('iphone-6')
+//             cy.wait(2000);
+//         })
+//         getURL("https://dev.", '');
+//         clickCTA("[tripnav-section='hamburger']");
+//         clickCTA("[for='mobile-ask']");
+//         checkVisibility('[ctest="ask-cta-card-mobile"]', '#form-ask-mobile');
+//         submitForm('#form-ask-submit-mobile');
+//         checkValidity('#form-ask-mobile', 'form-ask-mobile');
+//         requiredInfo('#form-ask-mobile', 'form-ask-mobile')
+//         uncheckBox('#form-ask-mobile', '#form-ask-mobile-requestNewsletter');
+//         submitForm('#form-ask-submit-mobile');
+//         utmPersonalInfoTrue();
+//         utmSecondaryFalse();
+//         // leadSourceFalse();
+//         // sourceDetail();
+//         catTempFalse();
+//         utmOptInFalse();
+//         utmValueTrue();
+//         requestedAtTrue();
+//         addressDataFalse();
+//     });
+// })
 describe(`Ask Form Test - nothing checked | NO UTM CODES`, function () {
     context('desktop', function () {
         //Validity Check
@@ -196,15 +196,15 @@ describe(`Ask Form Test - nothing checked | NO UTM CODES`, function () {
         catTempFalse();
         utmOptInFalse();
         // noUTMurlfilled();
-        UTMOnlySource();
+        // UTMOnlySource();
         requestedAtTrue();
-        addressDataFalse();
+        // addressDataFalse();
     });
 
     context('mobile', function () {
         beforeEach(function () {
             cy.viewport('iphone-6')
-            cy.wait(2000);
+            cy.wait(200);
         })
         getNoUTMURL("https://dev.");
         clickCTA("[tripnav-section='hamburger']");
@@ -221,8 +221,8 @@ describe(`Ask Form Test - nothing checked | NO UTM CODES`, function () {
         // leadSourceFalse();
         catTempFalse();
         utmOptInFalse();
-        UTMOnlySource();
+        // UTMOnlySource();
         requestedAtTrue();
-        addressDataFalse();
+        // addressDataFalse();
     });
 })
