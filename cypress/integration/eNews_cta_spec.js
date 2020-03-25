@@ -78,7 +78,7 @@ describe(`eNews Form Test | NO UTM CODES`, function () {
     context('mobile', function () {
         beforeEach(function () {
             cy.viewport('iphone-6')
-            cy.wait(200);
+            cy.wait(100);
         })
         getNoUTMURL("https://dev.");
         clickCTA('[for="mobile-more"]');

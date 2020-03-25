@@ -136,7 +136,7 @@ describe(`Catalog Form Test | DOES NOT INCLUDE UTM CODES | eNEWS CHECKED`, funct
     context('mobile', function () {
         beforeEach(function () {
             cy.viewport('iphone-6')
-            cy.wait(200);
+            cy.wait(100);
         })
         getNoUTMURL("https://dev.", "");
         clickCTA('[for="mobile-more"]');
@@ -293,7 +293,7 @@ describe(`Catalog Form Test | DOES NOT INCLUDE UTM CODES | eNEWS NOT CHECKED`, f
     context('mobile', function () {
         beforeEach(function () {
             cy.viewport('iphone-6')
-            cy.wait(200);
+            cy.wait(100);
         })
         getNoUTMURL("https://dev.", "");
         clickCTA('[for="mobile-more"]');

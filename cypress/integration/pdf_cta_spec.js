@@ -89,7 +89,7 @@ describe(`PDF Form Test - Nothing Checked | NO UTM CODES`, function () {
     context('mobile', function () {
         beforeEach(function () {
             cy.viewport('iphone-6')
-            cy.wait(2000);
+            // cy.wait(50);
         })
         getNoUTMURL('https://dev.');
         clickCTA("[tripnav-section='hamburger']");
@@ -175,7 +175,7 @@ describe(`PDF Form Test - eNews Checked | NO UTM CODES`, function () {
     context('mobile', function () {
         beforeEach(function () {
             cy.viewport('iphone-6')
-            cy.wait(2000);
+            // cy.wait(50);
         })
         getNoUTMURL('https://dev.');
         clickCTA("[tripnav-section='hamburger']");
@@ -269,7 +269,7 @@ describe(`PDF Form Test - Catalog Checked | NO UTM CODES`, function () {
     context('mobile', function () {
         beforeEach(function () {
             cy.viewport('iphone-6')
-            cy.wait(200);
+            // cy.wait(50);
         })
         getNoUTMURL('https://dev.');
         clickCTA("[tripnav-section='hamburger']");
@@ -363,7 +363,7 @@ describe(`PDF Form Test - Catalog & eNews Checked | NO UTM CODES`, function () {
     context('mobile', function () {
         beforeEach(function () {
             cy.viewport('iphone-6')
-            cy.wait(200);
+            // cy.wait(50);
         })
         getNoUTMURL('https://dev.');
         clickCTA("[tripnav-section='hamburger']");

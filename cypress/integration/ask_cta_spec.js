@@ -100,7 +100,7 @@ describe(`Ask Form Test - eNews checked | NO UTM CODES`, function () {
     context('mobile', function () {
         beforeEach(function () {
             cy.viewport('iphone-6')
-            cy.wait(200);
+            // cy.wait(100);
         })
         getNoUTMURL('https://dev.');
         clickCTA("[tripnav-section='hamburger']");
@@ -204,7 +204,7 @@ describe(`Ask Form Test - nothing checked | NO UTM CODES`, function () {
     context('mobile', function () {
         beforeEach(function () {
             cy.viewport('iphone-6')
-            cy.wait(200);
+            // cy.wait(100);
         })
         getNoUTMURL("https://dev.");
         clickCTA("[tripnav-section='hamburger']");
