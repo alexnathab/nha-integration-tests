@@ -6,11 +6,11 @@ export const changeViewport = () => {
             });
         });
 }
-
-export const getURL = (prefix, itinerary) => {
+var urlPrefix = "dev.";
+export const getURL = () => {
     it(`Visits a trip specific url with UTM codes in the queries`, function () {
         //the following string is full of queries and thus is being used for testing
-        cy.visit(`${prefix}nathab.com/africa/the-great-namibia-wildlife-safari/${itinerary}?banner&utm_source=TEST&utm_medium=TEST&utm_content=TEST&utm_campaign=TEST&utm_term=TEST`);
+        cy.visit(`${urlPrefix}nathab.com/africa/the-great-namibia-wildlife-safari/`);
     });
 }
 
