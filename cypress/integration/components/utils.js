@@ -30,6 +30,12 @@ export const clickCTA = (text) => {
     });
 }
 
+export const waitForPDF = () => {
+    it(`gives time for PDF to be rendered`, function () {
+        cy.wait(2000)
+    });
+}
+
 export const checkVisibility = (textOne, textTwo) => {
     it(`Makes sure the form is visible`, function () {
         cy.get(textOne).find(textTwo).should('be.visible');

@@ -16,7 +16,8 @@ import {
     utmOptInFalse,
     catTempFalse,
     pdfInfoTrue,
-    requestedAtTrue
+    requestedAtTrue,
+    waitForPDF
 } from './components/utils'
 
 
@@ -35,8 +36,8 @@ describe(`PDF Form Test - Nothing Checked | NO UTM CODES`, function () {
         pdfInfoTrue();
         catTempFalse();
         utmOptInFalse();
-
         requestedAtTrue();
+        waitForPDF();
     });
     context('mobile', function () {
         beforeEach(function () {
@@ -57,6 +58,7 @@ describe(`PDF Form Test - Nothing Checked | NO UTM CODES`, function () {
         catTempFalse();
         utmOptInFalse();
         requestedAtTrue();
+        waitForPDF();
     });
 });
 
@@ -75,6 +77,7 @@ describe(`PDF Form Test - eNews Checked | NO UTM CODES`, function () {
         catTempFalse();
         utmOptInTrue();
         requestedAtTrue();
+        waitForPDF();
     });
     context('mobile', function () {
         beforeEach(function () {
@@ -94,6 +97,7 @@ describe(`PDF Form Test - eNews Checked | NO UTM CODES`, function () {
         catTempFalse();
         utmOptInTrue();
         requestedAtTrue();
+        waitForPDF();
     });
 });
 
@@ -116,6 +120,7 @@ describe(`PDF Form Test - Catalog Checked | NO UTM CODES`, function () {
         utmOptInFalse();
         addressDataTrue();
         requestedAtTrue();
+        waitForPDF();
     });
     context('mobile', function () {
         beforeEach(function () {
@@ -139,6 +144,7 @@ describe(`PDF Form Test - Catalog Checked | NO UTM CODES`, function () {
         utmOptInFalse();
         addressDataTrue();
         requestedAtTrue();
+        waitForPDF();
     });
 });
 
@@ -160,6 +166,7 @@ describe(`PDF Form Test - Catalog & eNews Checked | NO UTM CODES`, function () {
         utmOptInTrue();
         addressDataTrue();
         requestedAtTrue();
+        waitForPDF();
     });
     context('mobile', function () {
         beforeEach(function () {
@@ -182,5 +189,6 @@ describe(`PDF Form Test - Catalog & eNews Checked | NO UTM CODES`, function () {
         utmOptInTrue();
         addressDataTrue();
         requestedAtTrue();
+        waitForPDF();
     });
 });
