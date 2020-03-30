@@ -7,10 +7,12 @@ export const changeViewport = () => {
         });
 }
 var urlPrefix = "dev.";
+var pageUrl = "/africa/the-great-namibia-wildlife-safari/";
+
 export const getURL = () => {
     it(`Visits a trip specific url with UTM codes in the queries`, function () {
         //the following string is full of queries and thus is being used for testing
-        cy.visit(`${urlPrefix}nathab.com/africa/the-great-namibia-wildlife-safari/`);
+        cy.visit(`${urlPrefix}nathab.com${pageUrl}`);
     });
 }
 
