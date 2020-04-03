@@ -21,7 +21,7 @@ var cta_buttons = {
 
 describe(`eNews Form Test | NO UTM CODES`, function () {
     context('desktop', function () {
-        getNoUTMURL("http://solo.");
+        getNoUTMURL("http://alex.");
         clickCTA(`${cta_buttons.id}`);
         checkVisibility('[ctest=utm_enews]', '#form-enews');
         submitForm('#form-enews-submit');
@@ -32,14 +32,14 @@ describe(`eNews Form Test | NO UTM CODES`, function () {
         utmPersonalInfoTrue();
         utmSecondaryTrue();
         utmOptInTrue();
-        noUTMurlfilled();
+
     })
     context('mobile', function () {
         beforeEach(function () {
             cy.viewport('iphone-6')
             cy.wait(2000);
         })
-        getNoUTMURL("http://solo.");
+        getNoUTMURL("http://alex.");
         clickCTA('[for="mobile-more"]');
         clickCTA('[more-nav="button"][for="mobile-enews"]');
         submitForm('#form-enews-submit-mobile');
@@ -49,6 +49,6 @@ describe(`eNews Form Test | NO UTM CODES`, function () {
         utmPersonalInfoTrue();
         utmSecondaryTrue();
         utmOptInTrue();
-        noUTMurlfilled();
+
     })
 });

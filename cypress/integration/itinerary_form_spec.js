@@ -22,7 +22,7 @@ import {
 // TEST 1 -- catalog box NOT checked
 
 describe(`Itinerary Pop Up Form Test - nothing checked | NO UTM CODES`, function () {
-    getNoUTMURL('http://solo.');
+    getNoUTMURL('http://alex.');
     checkVisibility('[tripnav~="wrapper"]', '#trip-nav-ul-li-2');
     it(`finds the Itinerary subnav link and clicks it`, function () {
         cy.get('[tripnav~="wrapper"]').find('#trip-nav-ul-li-2').click();
@@ -36,14 +36,14 @@ describe(`Itinerary Pop Up Form Test - nothing checked | NO UTM CODES`, function
     utmSecondaryTrue();
     catTempFalse();
     utmOptInTrue();
-    noUTMurlfilled();
+
     addressDataFalse();
 });
 
 //TEST 2 -- catalog box CHECKED
 
 describe(`Itinerary Pop Up Form Test - Catalog checked | NO UTM CODES`, function () {
-    getNoUTMURL('http://solo.');
+    getNoUTMURL('http://alex.');
     checkVisibility('[tripnav~="wrapper"]', '#trip-nav-ul-li-2');
     it(`finds the Itinerary subnav link and clicks it`, function () {
         cy.get('[tripnav~="wrapper"]').find('#trip-nav-ul-li-2').click();
@@ -59,6 +59,6 @@ describe(`Itinerary Pop Up Form Test - Catalog checked | NO UTM CODES`, function
     utmSecondaryTrue();
     catTemp();
     utmOptInTrue();
-    noUTMurlfilled();
+
     addressDataTrue();
 });

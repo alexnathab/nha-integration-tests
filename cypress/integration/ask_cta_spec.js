@@ -37,7 +37,7 @@ var cta_buttons = {
 describe(`Ask Form Test - eNews checked | NO UTM CODES`, function () {
     context('desktop', function () {
         //Validity Check
-        getNoUTMURL('http://solo.');
+        getNoUTMURL('http://alex.');
         clickCTA(`[ctest=ask_cta]`);
         checkVisibility('[ctest=ask_cta_lightbox]', '#form-ask');
         submitForm('#form-ask-submit');
@@ -49,7 +49,6 @@ describe(`Ask Form Test - eNews checked | NO UTM CODES`, function () {
         utmSecondaryTrue();
         catTempFalse();
         utmOptInTrue();
-        noUTMurlfilled();
         addressDataFalse();
     });
     context('mobile', function () {
@@ -57,7 +56,7 @@ describe(`Ask Form Test - eNews checked | NO UTM CODES`, function () {
             cy.viewport('iphone-6')
             cy.wait(2000);
         })
-        getNoUTMURL('http://solo.');
+        getNoUTMURL('http://alex.');
         clickCTA("[tripnav-section='hamburger']");
         clickCTA("[for='mobile-ask']");
         checkVisibility('[ctest="ask-cta-card-mobile"]', '#form-ask-mobile');
@@ -69,7 +68,7 @@ describe(`Ask Form Test - eNews checked | NO UTM CODES`, function () {
         utmSecondaryTrue();
         catTempFalse();
         utmOptInTrue();
-        noUTMurlfilled();
+
         addressDataFalse();
     });
 })
@@ -80,7 +79,7 @@ describe(`Ask Form Test - eNews checked | NO UTM CODES`, function () {
 describe(`Ask Form Test - nothing checked | NO UTM CODES`, function () {
     context('desktop', function () {
         //Validity Check
-        getNoUTMURL("http://solo.");
+        getNoUTMURL("http://alex.");
         clickCTA(`[ctest=ask_cta]`);
         checkVisibility('[ctest=ask_cta_lightbox]', '#form-ask');
         submitForm('#form-ask-submit');
@@ -96,7 +95,7 @@ describe(`Ask Form Test - nothing checked | NO UTM CODES`, function () {
         // leadSourceFalse();
         catTempFalse();
         utmOptInFalse();
-        // noUTMurlfilled();
+        // 
         UTMOnlySource();
         addressDataFalse();
     });
@@ -106,7 +105,7 @@ describe(`Ask Form Test - nothing checked | NO UTM CODES`, function () {
             cy.viewport('iphone-6')
             cy.wait(2000);
         })
-        getNoUTMURL("http://solo.");
+        getNoUTMURL("http://alex.");
         clickCTA("[tripnav-section='hamburger']");
         clickCTA("[for='mobile-ask']");
         checkVisibility('[ctest="ask-cta-card-mobile"]', '#form-ask-mobile');

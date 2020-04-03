@@ -25,7 +25,7 @@ import {
 // TEST 1 -- no checks
 describe(`PDF Form Test - Nothing Checked | NO UTM CODES`, function () {
     context('desktop', function () {
-        getNoUTMURL('http://solo.');
+        getNoUTMURL('http://alex.');
         clickCTA(`[ctest=pdf_cta]`);
         checkVisibility('[ctest=pdf_lightbox]', '#form-pdf');
         submitForm('#form-pdf-submit');
@@ -38,7 +38,7 @@ describe(`PDF Form Test - Nothing Checked | NO UTM CODES`, function () {
         pdfInfoTrue();
         catTempFalse();
         utmOptInFalse();
-        noUTMurlfilled();
+
         addressDataFalse();
     });
     context('mobile', function () {
@@ -46,7 +46,7 @@ describe(`PDF Form Test - Nothing Checked | NO UTM CODES`, function () {
             cy.viewport('iphone-6')
             cy.wait(2000);
         })
-        getNoUTMURL('http://solo.');
+        getNoUTMURL('http://alex.');
         clickCTA("[tripnav-section='hamburger']");
         clickCTA("[for='mobile-pdf']");
         checkVisibility('[ctest="pdf-cta-card-mobile"]', '#form-pdf-mobile');
@@ -60,7 +60,7 @@ describe(`PDF Form Test - Nothing Checked | NO UTM CODES`, function () {
         pdfInfoTrue();
         catTempFalse();
         utmOptInFalse();
-        noUTMurlfilled();
+
         addressDataFalse();
     });
 });
@@ -69,7 +69,7 @@ describe(`PDF Form Test - Nothing Checked | NO UTM CODES`, function () {
 // // // //TEST 2 -- enews checked only
 describe(`PDF Form Test - eNews Checked | NO UTM CODES`, function () {
     context('desktop', function () {
-        getNoUTMURL('http://solo.');
+        getNoUTMURL('http://alex.');
         clickCTA(`[ctest=pdf_cta]`);
         checkVisibility('[ctest=pdf_lightbox]', '#form-pdf');
         submitForm('#form-pdf-submit');
@@ -81,7 +81,7 @@ describe(`PDF Form Test - eNews Checked | NO UTM CODES`, function () {
         pdfInfoTrue();
         catTempFalse();
         utmOptInTrue();
-        noUTMurlfilled();
+
         addressDataFalse();
     });
     context('mobile', function () {
@@ -89,7 +89,7 @@ describe(`PDF Form Test - eNews Checked | NO UTM CODES`, function () {
             cy.viewport('iphone-6')
             cy.wait(2000);
         })
-        getNoUTMURL('http://solo.');
+        getNoUTMURL('http://alex.');
         clickCTA("[tripnav-section='hamburger']");
         clickCTA("[for='mobile-pdf']");
         checkVisibility('[ctest="pdf-cta-card-mobile"]', '#form-pdf-mobile');
@@ -102,7 +102,7 @@ describe(`PDF Form Test - eNews Checked | NO UTM CODES`, function () {
         pdfInfoTrue();
         catTempFalse();
         utmOptInTrue();
-        noUTMurlfilled();
+
         addressDataFalse();
     });
 });
@@ -110,7 +110,7 @@ describe(`PDF Form Test - eNews Checked | NO UTM CODES`, function () {
 // // // // TEST 3 -- cat checked only
 describe(`PDF Form Test - Catalog Checked | NO UTM CODES`, function () {
     context('desktop', function () {
-        getNoUTMURL('http://solo.');
+        getNoUTMURL('http://alex.');
         clickCTA(`[ctest=pdf_cta]`);
         checkVisibility('[ctest=pdf_lightbox]', '#form-pdf');
         submitForm('#form-pdf-submit');
@@ -125,7 +125,7 @@ describe(`PDF Form Test - Catalog Checked | NO UTM CODES`, function () {
         pdfInfoTrue();
         catTemp();
         utmOptInFalse();
-        noUTMurlfilled();
+
         addressDataTrue();
     });
     context('mobile', function () {
@@ -133,7 +133,7 @@ describe(`PDF Form Test - Catalog Checked | NO UTM CODES`, function () {
             cy.viewport('iphone-6')
             cy.wait(2000);
         })
-        getNoUTMURL('http://solo.');
+        getNoUTMURL('http://alex.');
         clickCTA("[tripnav-section='hamburger']");
         clickCTA("[for='mobile-pdf']");
         checkVisibility('[ctest="pdf-cta-card-mobile"]', '#form-pdf-mobile');
@@ -149,7 +149,7 @@ describe(`PDF Form Test - Catalog Checked | NO UTM CODES`, function () {
         pdfInfoTrue();
         catTemp();
         utmOptInFalse();
-        noUTMurlfilled();
+
         addressDataTrue();
     });
 });
@@ -157,7 +157,7 @@ describe(`PDF Form Test - Catalog Checked | NO UTM CODES`, function () {
 // // // // TEST 4 -- both enews and catalog checked
 describe(`PDF Form Test - Catalog & eNews Checked | NO UTM CODES`, function () {
     context('desktop', function () {
-        getNoUTMURL('http://solo.');
+        getNoUTMURL('http://alex.');
         clickCTA(`[ctest=pdf_cta]`);
         checkVisibility('[ctest=pdf_lightbox]', '#form-pdf');
         submitForm('#form-pdf-submit');
@@ -171,7 +171,7 @@ describe(`PDF Form Test - Catalog & eNews Checked | NO UTM CODES`, function () {
         pdfInfoTrue();
         catTemp();
         utmOptInTrue();
-        noUTMurlfilled();
+
         addressDataTrue();
     });
     context('mobile', function () {
@@ -179,7 +179,7 @@ describe(`PDF Form Test - Catalog & eNews Checked | NO UTM CODES`, function () {
             cy.viewport('iphone-6')
             cy.wait(2000);
         })
-        getNoUTMURL('http://solo.');
+        getNoUTMURL('http://alex.');
         clickCTA("[tripnav-section='hamburger']");
         clickCTA("[for='mobile-pdf']");
         checkVisibility('[ctest="pdf-cta-card-mobile"]', '#form-pdf-mobile');
@@ -194,7 +194,7 @@ describe(`PDF Form Test - Catalog & eNews Checked | NO UTM CODES`, function () {
         pdfInfoTrue();
         catTemp();
         utmOptInTrue();
-        noUTMurlfilled();
+
         addressDataTrue();
     });
 });
