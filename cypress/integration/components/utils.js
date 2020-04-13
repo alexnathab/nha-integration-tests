@@ -20,6 +20,7 @@ export const getNoUTMURL = (prefix, itinerary) => {
         cy.visit(`${prefix}nathab.com/africa/the-great-namibia-wildlife-safari/`);
     });
 }
+
 export const clickCTA = (text) => {
     it(`Clicks the appropriate button`, function () {
         cy.get(text).click({
