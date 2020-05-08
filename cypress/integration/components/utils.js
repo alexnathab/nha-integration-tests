@@ -106,7 +106,7 @@ export const utmOptInFalse = () => {
         cy.get('[ctest=utm_form]').find('#optInStories').should('not.be.checked');
         cy.get('[ctest=utm_form]').find('#optInWebinar').should('not.be.checked');
         cy.get('[ctest=utm_form]').find('#optInSurveys').should('not.be.checked');
-        cy.get('[ctest=utm_form]').find('#optInSalesperson').should('be.checked');
+        cy.get('[ctest=utm_form]').find('#optInSalesperson').should('not.be.checked');
     });
 }
 
