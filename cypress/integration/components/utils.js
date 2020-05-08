@@ -95,6 +95,7 @@ export const utmOptInTrue = () => {
         cy.get('[ctest=utm_form]').find('#optInStories').should('be.checked');
         cy.get('[ctest=utm_form]').find('#optInWebinar').should('be.checked');
         cy.get('[ctest=utm_form]').find('#optInSurveys').should('be.checked');
+        cy.get('[ctest=utm_form]').find('#optInSalesperson').should('be.checked');
     });
 }
 
@@ -105,6 +106,7 @@ export const utmOptInFalse = () => {
         cy.get('[ctest=utm_form]').find('#optInStories').should('not.be.checked');
         cy.get('[ctest=utm_form]').find('#optInWebinar').should('not.be.checked');
         cy.get('[ctest=utm_form]').find('#optInSurveys').should('not.be.checked');
+        cy.get('[ctest=utm_form]').find('#optInSalesperson').should('be.checked');
     });
 }
 
