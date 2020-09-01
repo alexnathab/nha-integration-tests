@@ -19,7 +19,7 @@ var cta_buttons = {
 	contains: 'eNEWS'
 }
 
-var templatesToCheck = ["solo.nathab.com", "solo.nathab.com/africa/botswana-explorer-safari/", "http://dev1.nathab.com/community-support/"]
+var templatesToCheck = ["dev1.nathab.com", "dev1.nathab.com/africa/botswana-explorer-safari/", "http://dev1.nathab.com/community-support/"]
 
 for (let i = 0; i < templatesToCheck.length; i++) {
 
